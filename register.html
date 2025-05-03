@@ -1,18 +1,69 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Register for the Race</title>
+    <title>Race Registration</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fafafa;
+        }
+
+        .form-container {
+            text-align: center;
+            padding: 30px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            margin: 10px;
+            padding: 8px;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-weight: bold;
+            background: darkgreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: seagreen;
+        }
+    </style>
 </head>
 <body>
-    <h1>Race Registration</h1>
-    <form>
-        <label>Name: <input type="text" name="name" required></label><br>
-        <label>Email: <input type="email" name="email" required></label><br>
-        <label>Emergency Contact: <input type="text" name="emergency"></label><br>
-        <input type="submit" value="Register">
-    </form>
+    <div class="form-container">
+        <h1>Race Registration</h1>
+        <form>
+            <div>
+                <label>Name:</label><br>
+                <input type="text" name="name">
+            </div>
+            <div>
+                <label>Email:</label><br>
+                <input type="email" name="email">
+            </div>
+            <div>
+                <label>Emergency Contact:</label><br>
+                <input type="text" name="emergency">
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
 </body>
 </html>
