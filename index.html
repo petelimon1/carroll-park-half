@@ -5,51 +5,69 @@
     <title>Carroll Park Half Marathon</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
+        .site-nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .site-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .site-nav li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        .site-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .site-nav a:hover {
+            text-decoration: underline;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
         }
-        h1, h2 {
-            color: darkgreen;
-        }
+
         .map-section {
             margin-bottom: 30px;
-        }
-        iframe {
-            max-width: 100%;
         }
     </style>
 </head>
 <body>
+    <nav class="site-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="aid-station.html">Aid Station</a></li>
+            <li><a href="results.html">Results</a></li>
+        </ul>
+    </nav>
+
     <h1>Welcome to the Carroll Park Half Marathon</h1>
     <p>A real half marathon with 52 laps around Carroll Park (400m loops). Fun, absurd, and historic.</p>
 
     <h2>Map of the Course</h2>
 
-    <!-- Strava route embed -->
     <div class="map-section">
         <div class="strava-embed-placeholder" 
-            data-embed-type="route" 
-            data-embed-id="3353784827080272942" 
-            data-style="standard" 
-            data-map-hash="16.2/40.68112/-73.99543" 
-            data-from-embed="true">
+             data-embed-type="route" 
+             data-embed-id="3353784827080272942" 
+             data-style="standard" 
+             data-map-hash="16.2/40.68112/-73.99543" 
+             data-from-embed="true">
         </div>
         <script src="https://strava-embeds.com/embed.js"></script>
     </div>
-
-    <!-- Google Maps iframe -->
-    <div class="map-section">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.9462764912067!2d-73.99530668465434!3d40.68015737933578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a4b7405c6a3%3A0xd0c48289994dc404!2sCarroll%20Park!5e0!3m2!1sen!2sus!4v1714727985200!5m2!1sen!2sus"
-          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-        </iframe>
-    </div>
-
-    <ul>
-        <li><a href="register.html">Register</a></li>
-        <li><a href="aid-station.html">Aid Station</a></li>
-        <li><a href="results.html">Historical Results</a></li>
-    </ul>
 </body>
 </html>
