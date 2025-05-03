@@ -10,13 +10,13 @@
             box-sizing: border-box;
         }
 
-       body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('carrollparkcorner.png') no-repeat center center fixed;
-    background-size: cover;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('carrollparkcorner.png') no-repeat center center fixed;
+            background-size: cover;
+        }
 
         .site-nav {
             background-color: #333;
@@ -39,22 +39,26 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
-            font-size: 20px;
+            font-size: 16px;
         }
 
         .site-nav a:hover {
             text-decoration: underline;
         }
 
-      .content {
-    padding: 40px 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.8);  /* <-- Add this line */
-    border-radius: 10px;
-}
+        .content {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 10px;
+        }
 
+        .content p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
 
         .race-date {
             font-size: 1.5em;
@@ -72,8 +76,12 @@
                 padding: 20px 10px;
             }
 
+            .content p {
+                font-size: 1em;
+            }
+
             .race-date {
-                font-size: 2.25em;
+                font-size: 1.25em;
             }
         }
     </style>
@@ -88,11 +96,21 @@
         </ul>
     </nav>
 
-    <div class="content">
-        <h1>Info</h1>
-        <p class="race-date">2025 race will be held on Saturday, August 23rd at 5pm</p>
-        <p>The loop around Carroll Park is roughly 400m. 52.75 laps = a half marathon. The actual number of laps may vary. Each runner should use their GPS watch to track their total distance. The race finishes once you reach 21.1km or 13.1 miles and continue to finish your current lap. The start and finish line is on the corner of President & Smith.</p>
-        <p>Runners will be able to stay hydrated every 400m at the water station on the corner of President & Smith. Spectators are welcome to watch at any point along the course, or while enjoying a beer at the Gowanus Yacht Club across the road.</p>
-    </div>
-</body>
-</html>
+   <div class="content">
+    <h1>Info</h1>
+    <p class="race-date">2025 race will be held on Saturday, August 23rd at 5pm</p>
+
+    <p>
+        The loop around Carroll Park is roughly 400m.<br>
+        52.75 laps = a half marathon.<br>
+        The actual number of laps may vary.<br>
+        Each runner should use their GPS watch to track their total distance.<br>
+        The race finishes once you reach 21.1km or 13.1 miles and continue to finish your current lap.<br>
+        The start and finish line is on the corner of President & Smith.
+    </p>
+
+    <p>
+        Runners will be able to stay hydrated every 400m at the water station on the corner of President & Smith.<br>
+        Spectators are welcome to watch at any point along the course, or while enjoying a beer at the Gowanus Yacht Club across the road.
+    </p>
+</div>
