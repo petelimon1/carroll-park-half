@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historical Results</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
@@ -14,6 +15,7 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            background-color: #f8f8f8;
         }
 
         .site-nav {
@@ -70,10 +72,33 @@
             padding: 10px;
             font-size: 16px;
             margin: 20px auto;
+            max-width: 100%;
+            width: 100%;
         }
 
         #resultsContainer {
             margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        @media (max-width: 768px) {
+            .site-nav li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .content {
+                padding: 20px 10px;
+            }
+
+            .winner-photo {
+                max-width: 100%;
+            }
+
+            select {
+                font-size: 14px;
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -87,7 +112,6 @@
         </ul>
     </nav>
 
-    <!-- Dropdown and results output at top -->
     <div>
         <label for="yearSelect"><strong>Choose a Year:</strong></label><br>
         <select id="yearSelect">
