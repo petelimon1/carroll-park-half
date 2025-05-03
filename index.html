@@ -46,14 +46,13 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            min-height: calc(100vh - 60px); /* leave space for nav */
             padding: 40px 20px;
         }
 
         .map-section {
-            margin-top: 30px;
             width: 100%;
             max-width: 800px;
+            margin-top: 30px;
         }
 
         .strava-embed-placeholder {
@@ -76,3 +75,19 @@
         <p>A real half marathon with 52 laps around Carroll Park (400m loops). Fun, absurd, and historic.</p>
 
         <h2>Map of the Course</h2>
+        <div class="map-section">
+            <div class="strava-embed-placeholder" 
+                 data-embed-type="route" 
+                 data-embed-id="3353784827080272942" 
+                 data-style="standard" 
+                 data-map-hash="16.2/40.68112/-73.99543" 
+                 data-from-embed="true">
+            </div>
+        </div>
+    </div>
+
+    <!-- This script must come after the Strava placeholder -->
+    <script src="https://strava-embeds.com/embed.js"></script>
+</body>
+</html>
+
