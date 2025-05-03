@@ -5,11 +5,16 @@
     <title>Carroll Park Half Marathon</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
         .site-nav {
             background-color: #333;
             padding: 10px 0;
             text-align: center;
-            margin-bottom: 30px;
         }
 
         .site-nav ul {
@@ -34,12 +39,6 @@
             text-decoration: underline;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
         .page-wrapper {
             display: flex;
             flex-direction: column;
@@ -51,12 +50,14 @@
 
         .map-section {
             width: 100%;
-            max-width: 800px;
+            display: flex;
+            justify-content: center;
             margin-top: 30px;
         }
 
         .strava-embed-placeholder {
             width: 100%;
+            max-width: 800px;
         }
     </style>
 </head>
@@ -75,18 +76,19 @@
         <p>A real half marathon with 52 laps around Carroll Park (400m loops). Fun, absurd, and historic.</p>
 
         <h2>Map of the Course</h2>
+
         <div class="map-section">
             <div class="strava-embed-placeholder" 
-                 data-embed-type="route" 
-                 data-embed-id="3353784827080272942" 
-                 data-style="standard" 
-                 data-map-hash="16.2/40.68112/-73.99543" 
-                 data-from-embed="true">
+                data-embed-type="route" 
+                data-embed-id="3353784827080272942" 
+                data-style="standard" 
+                data-map-hash="16.2/40.68112/-73.99543" 
+                data-from-embed="true">
             </div>
         </div>
     </div>
 
-    <!-- This script must come after the Strava placeholder -->
+    <!-- Script for Strava embed -->
     <script src="https://strava-embeds.com/embed.js"></script>
 </body>
 </html>
