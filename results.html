@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Historical Results</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/results.js" defer></script>
     <style>
         * {
             box-sizing: border-box;
@@ -14,12 +13,12 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            text-align: center;
         }
 
         .site-nav {
             background-color: #333;
             padding: 10px 0;
-            text-align: center;
         }
 
         .site-nav ul {
@@ -60,14 +59,42 @@
 
         figure {
             margin: 20px 0;
-            text-align: center;
         }
 
         figcaption {
             font-style: italic;
             color: #555;
         }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        #resultsContainer {
+            margin-top: 20px;
+        }
     </style>
+    <script>
+        // Populate the year dropdown dynamically
+        window.addEventListener('DOMContentLoaded', () => {
+            const select = document.getElementById('yearSelect');
+            for (let year = 1890; year <= 2025; year++) {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                select.appendChild(option);
+            }
+
+            // Optional: display placeholder results
+            select.addEventListener('change', () => {
+                const year = select.value;
+                const resultsContainer = document.getElementById('resultsContainer');
+                resultsContainer.innerHTML = `<p><strong>Results for ${year}</strong><br>1st: J. Doe – 1:34:22<br>2nd: A. Smith – 1:37:10</p>`;
+            });
+        });
+    </script>
 </head>
 <body>
     <nav class="site-nav">
@@ -90,9 +117,13 @@
         </figure>
 
         <h2>Select a Year to View Results</h2>
-        <label for="yearSelect">Choose a Year:</label>
-        <select id="yearSelect"></select>
+        <label for="yearSelect">Choose a Year:</label><br>
+        <select id="yearSelect">
+            <option disabled selected value="">-- Select a Year --</option>
+        </select>
+
         <div id="resultsContainer"></div>
     </div>
 </body>
 </html>
+
