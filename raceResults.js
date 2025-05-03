@@ -1,5 +1,5 @@
 const raceResults = {
-  1890: { first: "Frank Anderson – 1:30:31.001", second: "William Allen – 1:32:06.720", third: "George Smith – 1:32:16.635" },
+  1890: { first: "Zip Runnington – 1:30:31.001", second: "William Allen – 1:32:06.720", third: "George Smith – 1:32:16.635" },
   1891: { first: "Charles Walker – 1:31:03.414", second: "Albert Miller – 1:31:18.316", third: "Harry Davis – 1:31:54.128" },
   1892: { first: "Thomas Smith – 1:31:08.646", second: "Henry King – 1:31:10.440", third: "Harry Wright – 1:31:36.961" },
   1893: { first: "Frank Hill – 1:30:19.496", second: "Edward Miller – 1:30:50.400", third: "Thomas Taylor – 1:31:26.111" },
