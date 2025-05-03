@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +5,32 @@
     <title>Historical Results</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/results.js" defer></script>
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        figure {
+            margin: 20px 0;
+            text-align: center;
+        }
+        figcaption {
+            font-style: italic;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
     <h1>Historical Results</h1>
     <p>The first Carroll Park Half Marathon was run in 1890 with just two participants. It's been run every year since!</p>
+
+    <h2>Winner – 1890</h2>
+    <figure>
+        <img src="1890%20runner.png" alt="1890 winner at Court and President Streets">
+        <figcaption>1890 — The inaugural champion, photographed at Court & President</figcaption>
+    </figure>
+
+    <h2>Select a Year to View Results</h2>
     <label for="yearSelect">Choose a Year:</label>
     <select id="yearSelect"></select>
     <div id="resultsContainer"></div>
