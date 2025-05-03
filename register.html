@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Race Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
@@ -54,12 +55,15 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            max-width: 940px;     /* Allow full iframe width */
+            width: 100%;
+            margin: 0 auto;
         }
 
         iframe {
             border: none;
             width: 100%;
-            max-width: 740px;
+            max-width: 940px;
             height: 645px;
         }
     </style>
@@ -77,8 +81,11 @@
     <div class="page-wrapper">
         <div class="form-container">
             <h1>Race Registration</h1>
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfdxuStluaioch7u8KWLjlGyPwcMO1dRzHj-mH5SvSxeVi3EQ/viewform?embedded=true"
-                width="940" height="645" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            <iframe 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfdxuStluaioch7u8KWLjlGyPwcMO1dRzHj-mH5SvSxeVi3EQ/viewform?embedded=true"
+                width="940" height="645" frameborder="0" marginheight="0" marginwidth="0">
+                Loading…
+            </iframe>
         </div>
     </div>
 </body>
