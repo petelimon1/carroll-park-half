@@ -8,12 +8,44 @@
     <style>
         body {
             margin: 0;
-            height: 100vh;
             font-family: 'Inter', sans-serif;
+            background: #fafafa;
+        }
+
+        .site-nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .site-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .site-nav li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        .site-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .site-nav a:hover {
+            text-decoration: underline;
+        }
+
+        .page-wrapper {
+            min-height: calc(100vh - 60px);
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #fafafa;
+            padding: 40px 20px;
         }
 
         .form-container {
@@ -48,31 +80,26 @@
 </head>
 <body>
     <nav class="site-nav">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="register.html">Register</a></li>
-    <li><a href="aid-station.html">Aid Station</a></li>
-    <li><a href="results.html">Results</a></li>
-  </ul>
-</nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="aid-station.html">Aid Station</a></li>
+            <li><a href="results.html">Results</a></li>
+        </ul>
+    </nav>
 
-    <div class="form-container">
-        <h1>Race Registration</h1>
-        <form>
-            <div>
-                <label>Name:</label><br>
-                <input type="text" name="name">
-            </div>
-            <div>
-                <label>Email:</label><br>
-                <input type="email" name="email">
-            </div>
-            <div>
-                <label>Emergency Contact:</label><br>
-                <input type="text" name="emergency">
-            </div>
-            <button type="submit">Register</button>
-        </form>
-    </div>
-</body>
-</html>
+    <div class="page-wrapper">
+        <div class="form-container">
+            <h1>Race Registration</h1>
+            <form>
+                <div>
+                    <label>Name:</label><br>
+                    <input type="text" name="name">
+                </div>
+                <div>
+                    <label>Email:</label><br>
+                    <input type="email" name="email">
+                </div>
+                <div>
+                    <label>Emergency Contact:</label><br>
+                    <input type="text" name="
