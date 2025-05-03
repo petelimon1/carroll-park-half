@@ -134,7 +134,7 @@ const raceResults = {
   2022: { first: "Benjamin Wilson – 1:15:09.495", second: "Alexander Miller – 1:15:33.168", third: "Benjamin Turner – 1:15:36.130" },
   2023: { first: "Elijah Allen – 1:14:34.051", second: "Alexander Moore – 1:15:27.786", third: "Liam Walker – 1:16:05.345" },
   2024: { first: "Noah Wright – 1:14:32.805", second: "Lucas Miller – 1:15:19.767", third: "James Hill – 1:16:13.399" },
-  2025: { first: "Elijah Allen – 1:14:24.195", second: "Benjamin Hall – 1:15:04.408", third: "Liam Green – 1:15:57.321" },
+  2025: { first: "TBD – x:xx:xx.xxx", second: "TBD – x:xx:xx.xxx", third: "TBD – x:xx:xx.xxx" },
 };
 
 window.addEventListener('DOMContentLoaded', () => {
