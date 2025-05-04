@@ -1,168 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historical Results</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historical Results</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-color: #f8f8f8;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f8f8f8;
+    }
 
-        .site-nav {
-            background-color: #333;
-            padding: 10px 0;
-        }
+    .site-nav {
+      background-color: #333;
+      padding: 10px 0;
+    }
 
-        .site-nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+    .site-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 
-        .site-nav li {
-            display: inline-block;
-            margin: 0 15px;
-        }
+    .site-nav li {
+      display: inline-block;
+      margin: 0 15px;
+    }
 
-        .site-nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-        }
+    .site-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
 
-        .site-nav a:hover {
-            text-decoration: underline;
-        }
+    .site-nav a:hover {
+      text-decoration: underline;
+    }
 
-        .content {
-            padding: 40px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    .content {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-        .winner-photo {
-            max-width: 300px;
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
+    .winner-photo {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
 
-        figure {
-            margin: 20px 0;
-        }
+    figure {
+      margin: 20px 0;
+    }
 
-        figcaption {
-            font-style: italic;
-            color: #555;
-        }
+    figcaption {
+      font-style: italic;
+      color: #555;
+    }
 
-        select {
-            padding: 10px;
-            font-size: 16px;
-            margin: 20px auto;
-            width: 250%px;
-        }
+    .year-selector {
+      margin-top: 20px;
+    }
 
-        #resultsContainer {
-            margin: 20px auto;
-            padding: 0 20px;
-        }
+    select {
+      padding: 10px;
+      font-size: 16px;
+      margin: 20px auto;
+      width: 100%;
+      max-width: 300px;
+      display: block;
+    }
 
-        @media (max-width: 768px) {
-            .site-nav li {
-                display: block;
-                margin: 10px 0;
-            }
+    #resultsContainer {
+      margin: 20px auto;
+      padding: 0 20px;
+    }
 
-            .content {
-                padding: 20px 10px;
-            }
+    @media (max-width: 768px) {
+      .site-nav li {
+        display: block;
+        margin: 10px 0;
+      }
 
-            .winner-photo {
-                max-width: 100%;
-            }
+      .content {
+        padding: 20px 10px;
+      }
 
-            select {
-                font-size: 14px;
-                width: 100%;
-            }
-        }
-    </style>
+      .winner-photo {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav class="site-nav">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="course-map.html">Course Map</a></li>
-            <li><a href="register.html">Register</a></li>
-            <li><a href="aid-station.html">Info</a></li>
-            <li><a href="results.html">Results</a></li>
-        </ul>
-    </nav>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="course-map.html">Course Map</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="aid-station.html">Info</a></li>
+      <li><a href="results.html">Results</a></li>
+    </ul>
+  </nav>
 
-    <div class="year-selector">
+  <div class="year-selector">
     <label for="yearSelect"><strong>Select a Year:</strong></label><br>
     <select id="yearSelect">
-        <option disabled selected value="">-- Select a Year --</option>
+      <option disabled selected value="">-- Select a Year --</option>
     </select>
-</div>
+  </div>
 
-    <div id="resultsContainer"></div>
+  <div id="resultsContainer"></div>
 
-    <div class="content">
-        <h1>Historical Results</h1>
-        <p>The world famous Carroll Park Half Marathon was first held in 1890 with only three participants!<br>
-            It's been held every year since then, and today is by far the most popular Half Marathon in all of Carroll Gardens</p>
+  <div class="content">
+    <h1>Historical Results</h1>
+    <p>The world famous Carroll Park Half Marathon was first held in 1890 with only three participants!<br>
+      It's been held every year since then, and today is by far the most popular Half Marathon in all of Carroll Gardens</p>
 
-        <h2>Winner – 1890</h2>
-        <figure>
-            <img src="1890%20runner.png" alt="1890 winner at Court and President Streets" class="winner-photo">
-            <figcaption>1890 — The inaugural champion, Zip Runnington, photographed by George Eastman on his Kodak Box Camera on the corner of Court & President</figcaption>
-        </figure>
-    </div>
-    
-         <h2>Top 3 finishers – 1943</h2>
+    <h2>Winner – 1890</h2>
     <figure>
-    <img src="1943runners.png" alt="1943 runners at Court and President Streets" class="winner-photo">
-    <figcaption>1943 — Top three finishers recently returned from the war. Pictured at Court & President in wartime Carroll Gardens.</figcaption>
-</figure>
+      <img src="1890%20runner.png" alt="1890 winner at Court and President Streets" class="winner-photo">
+      <figcaption>1890 — The inaugural champion, Zip Runnington, photographed by George Eastman on his Kodak Box Camera on the corner of Court & President</figcaption>
+    </figure>
 
-        <h2>Top 3 finishers – 1969</h2>
+    <h2>Top 3 finishers – 1943</h2>
     <figure>
-    <img src="1969runners.png" alt="1969 runners at Court and President Streets" class="winner-photo">
-    <figcaption>1969 — Post race celebrations at Court & President</figcaption>
-</figure>
-     
+      <img src="1943runners.png" alt="1943 runners at Court and President Streets" class="winner-photo">
+      <figcaption>1943 — Top three finishers recently returned from the war. Pictured at Court & President in wartime Carroll Gardens.</figcaption>
+    </figure>
+
+    <h2>Top 3 finishers – 1969</h2>
+    <figure>
+      <img src="1969runners.png" alt="1969 runners at Court and President Streets" class="winner-photo">
+      <figcaption>1969 — Post race celebrations at Court & President</figcaption>
+    </figure>
+
     <h2>Winner – 1983</h2>
     <figure>
-    <img src="1983runners.png" alt="1983 runners at Court and President Streets" class="winner-photo">
-    <figcaption>1983 — Justin Green celebrating with his friends and an ice cold beer at the newly opened Gowanus Yacht Club after his winning race</figcaption>
-</figure>
+      <img src="1983runners.png" alt="1983 runners at Court and President Streets" class="winner-photo">
+      <figcaption>1983 — Justin Green celebrating with his friends and an ice cold beer at the newly opened Gowanus Yacht Club after his winning race</figcaption>
+    </figure>
 
-     <h2>Winner – 2008</h2>
+    <h2>Winner – 2008</h2>
     <figure>
-    <img src="2008runners.png" alt="2008 runners at Court and President Streets" class="winner-photo">
-    <figcaption>2008 — David Turner completelty cooked after a blistering win in a photo finish race</figcaption>
-</figure>
+      <img src="2008runners.png" alt="2008 runners at Court and President Streets" class="winner-photo">
+      <figcaption>2008 — David Turner completely cooked after a blistering win in a photo finish race</figcaption>
+    </figure>
 
     <h2>Winner – 2076 (probably)</h2>
     <figure>
-    <img src="2076runners.png" alt="2076 runners at Court and President Streets" class="winner-photo">
-    <figcaption>2076 — The first cyborg runner, XR44Steve, wins the Carroll Park Half after the end of the Second Robot War</figcaption>
-</figure>
-    
-    <script src="raceResults.js" defer></script>
+      <img src="2076runners.png" alt="2076 runners at Court and President Streets" class="winner-photo">
+      <figcaption>2076 — The first cyborg runner, XR44Steve, wins the Carroll Park Half after the end of the Second Robot War</figcaption>
+    </figure>
+  </div>
+
+  <script src="raceResults.js" defer></script>
 </body>
 </html>
