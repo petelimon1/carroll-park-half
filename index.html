@@ -48,17 +48,37 @@
       text-decoration: underline;
     }
 
-    .logo-wrapper {
+    .hero-wrapper {
       flex: 1;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 40px 20px;
+      text-align: center;
     }
 
-    .logo-wrapper img {
+    .hero-wrapper img {
       max-width: 90%;
       height: auto;
+      margin-bottom: 30px;
+    }
+
+    .overlay {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 20px 20px;
+      border-radius: 10px;
+      max-width: 600px;
+    }
+
+    h1 {
+      margin: 0 0 15px;
+      font-size: 2em;
+    }
+
+    p {
+      margin: 5px 0;
+      font-size: 1.2em;
     }
 
     @media (max-width: 600px) {
@@ -67,8 +87,16 @@
         margin: 10px 0;
       }
 
-      .logo-wrapper {
-        padding: 20px 10px;
+      h1 {
+        font-size: 1.6em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+
+      .overlay {
+        padding: 15px;
       }
     }
   </style>
@@ -84,8 +112,13 @@
     </ul>
   </nav>
 
-  <div class="logo-wrapper">
+  <div class="hero-wrapper">
     <img src="CarrollParkHalfMarathonLOGO.png" alt="Carroll Park Half Marathon Logo">
+    <div class="overlay">
+      <h1>Carroll Park Half Marathon</h1>
+      <p>A half marathon around Carroll Park.</p>
+      <p>Fun, absurd, and historic.</p>
+    </div>
   </div>
 </body>
 </html>
