@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Historical Results</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
   <style>
     * {
       box-sizing: border-box;
@@ -15,8 +15,8 @@
       margin: 0;
       padding: 0;
       text-align: center;
-      background-color: #f4ecd8; /* Sepia tone */
-      color: #3b2f2f; /* Muted brown for text */
+      background-color: #f4ecd8;
+      color: #3b2f2f;
     }
 
     .site-nav {
@@ -47,47 +47,57 @@
     }
 
     .content {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: 0 auto;
-      background-color: rgba(255, 255, 255, 0.7);
-      border-radius: 8px;
+      padding: 20px 15px;
+      max-width: 700px;
+      margin: 20px auto;
+      background-color: rgba(255, 255, 255, 0.75);
+      border-radius: 6px;
+    }
+
+    h1, h2 {
+      margin: 10px 0 15px;
+    }
+
+    p {
+      margin: 10px 0 20px;
     }
 
     .winner-photo {
-      max-width: 300px;
+      max-width: 260px;
       width: 100%;
       height: auto;
       display: block;
-      margin: 0 auto;
-      border: 3px solid #c0a96f;
+      margin: 10px auto;
+      border: 2px solid #c0a96f;
     }
 
     figure {
-      margin: 20px 0;
+      margin: 10px 0 20px;
     }
 
     figcaption {
       font-style: italic;
       color: #5a4c3a;
+      font-size: 0.95em;
+      margin-top: 5px;
     }
 
     .year-selector {
-      margin-top: 20px;
+      margin: 15px auto;
     }
 
     select {
-      padding: 10px;
-      font-size: 16px;
-      margin: 20px auto;
+      padding: 8px;
+      font-size: 15px;
+      margin: 10px auto 20px;
       width: 100%;
-      max-width: 300px;
+      max-width: 280px;
       display: block;
     }
 
     #resultsContainer {
-      margin: 20px auto;
-      padding: 0 20px;
+      margin: 10px auto;
+      padding: 0 10px;
     }
 
     @media (max-width: 768px) {
@@ -97,11 +107,11 @@
       }
 
       .content {
-        padding: 20px 10px;
+        padding: 15px 10px;
       }
 
       .winner-photo {
-        max-width: 100%;
+        max-width: 90%;
       }
     }
   </style>
@@ -129,7 +139,7 @@
   <div class="content">
     <h1>Historical Results</h1>
     <p>The world famous Carroll Park Half Marathon was first held in 1890 with only three participants!<br>
-      It's been held every year since then, and today is by far the most popular Half Marathon in all of Carroll Gardens</p>
+      It's been held every year since then, and today is by far the most popular Half Marathon in all of Carroll Gardens.</p>
 
     <h2>Winner – 1890</h2>
     <figure>
