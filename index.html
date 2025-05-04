@@ -1,128 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carroll Park Half Marathon</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carroll Park Half Marathon</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: url('SBRCcorner.png') no-repeat center center fixed;
-            background-size: cover;
-        }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: url('CarrollParkHalfMarathonLOGO.png') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .site-nav {
-            background-color: #333;
-            padding: 10px 0;
-            text-align: center;
-        }
+    .site-nav {
+      background-color: #333;
+      padding: 10px 0;
+      text-align: center;
+    }
 
-        .site-nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+    .site-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 
-        .site-nav li {
-            display: inline-block;
-            margin: 0 10px;
-        }
+    .site-nav li {
+      display: inline-block;
+      margin: 0 15px;
+    }
 
-        .site-nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-        }
+    .site-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
 
-        .site-nav a:hover {
-            text-decoration: underline;
-        }
+    .site-nav a:hover {
+      text-decoration: underline;
+    }
 
-        .page-wrapper {
-            padding: 40px 20px;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.85);
-            max-width: 900px;
-            margin: 40px auto;
-            border-radius: 12px;
-        }
+    .hero-wrapper {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
 
-        .map-section {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
+    .overlay {
+      background: rgba(255, 255, 255, 0.75);
+      padding: 30px 20px;
+      border-radius: 10px;
+      max-width: 600px;
+    }
 
-        .strava-embed-placeholder {
-            width: 100%;
-            max-width: 800px;
-        }
+    h1 {
+      margin: 0 0 15px;
+      font-size: 2em;
+    }
 
-        h1, h2, p {
-            text-align: center;
-            margin: 20px 0;
-        }
+    p {
+      margin: 5px 0;
+      font-size: 1.2em;
+    }
 
-        @media (max-width: 768px) {
-            .site-nav li {
-                display: block;
-                margin: 10px 0;
-            }
+    @media (max-width: 600px) {
+      .site-nav li {
+        display: block;
+        margin: 10px 0;
+      }
 
-            .map-section {
-                flex-direction: column;
-                align-items: center;
-            }
+      h1 {
+        font-size: 1.6em;
+      }
 
-            .strava-embed-placeholder {
-                max-width: 100%;
-            }
+      p {
+        font-size: 1em;
+      }
 
-            .page-wrapper {
-                margin: 20px 10px;
-                padding: 20px;
-            }
-        }
-    </style>
+      .overlay {
+        padding: 20px 15px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav class="site-nav">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="course-map.html">Course Map</a></li>
-            <li><a href="register.html">Register</a></li>
-            <li><a href="aid-station.html">Info</a></li>
-            <li><a href="results.html">Results</a></li>
-        </ul>
-    </nav>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="course-map.html">Course Map</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="aid-station.html">Info</a></li>
+      <li><a href="results.html">Results</a></li>
+    </ul>
+  </nav>
 
-    <div class="page-wrapper">
-        <h1>Carroll Park Half Marathon</h1>
-        <p>A real half marathon around the perimeter of Carroll Park.<br>
-            Fun, absurd, and historic.</p>
-
-        <h2>Course Map (repeat 53 times)</h2>
-
-        <div class="map-section">
-            <div class="strava-embed-placeholder" 
-                data-embed-type="route" 
-                data-embed-id="3353784827080272942" 
-                data-style="standard" 
-                data-map-hash="16.2/40.68112/-73.99543" 
-                data-from-embed="true">
-            </div>
-        </div>
+  <div class="hero-wrapper">
+    <div class="overlay">
+      <h1>Carroll Park Half Marathon</h1>
+      <p>A real half marathon around the perimeter of Carroll Park.</p>
+      <p>Fun, absurd, and historic.</p>
     </div>
-
-    <script src="https://strava-embeds.com/embed.js"></script>
+  </div>
 </body>
 </html>
