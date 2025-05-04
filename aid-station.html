@@ -10,18 +10,25 @@
       box-sizing: border-box;
     }
 
-    body {
-      font-family: Arial, sans-serif;
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
       background: url('carrollparkcorner.png') no-repeat center center fixed;
       background-size: cover;
+      display: flex;
+      flex-direction: column;
     }
 
     .site-nav {
       background-color: #333;
       padding: 10px 0;
       text-align: center;
+      flex-shrink: 0;
     }
 
     .site-nav ul {
@@ -46,24 +53,39 @@
       text-decoration: underline;
     }
 
+    .main-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
     .content {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: 40px auto;
-      text-align: center;
       background: rgba(255, 255, 255, 0.85);
+      padding: 20px 30px;
       border-radius: 10px;
+      max-width: 800px;
+      max-height: calc(100vh - 80px); /* fits within screen incl. nav */
+      overflow-y: auto;
+      text-align: center;
+    }
+
+    .content h1 {
+      font-size: 1.6em;
+      margin-top: 0;
     }
 
     .content p {
-      font-size: 1.25em;
-      line-height: 1.6;
+      font-size: 1.2em;
+      line-height: 1.5;
+      margin-bottom: 1em;
     }
 
-    .race-date {
-      font-size: 1.5em;
-      font-weight: bold;
-      margin-bottom: 20px;
+    hr {
+      margin: 20px 0;
+      border: none;
+      border-top: 1px solid #aaa;
     }
 
     @media (max-width: 768px) {
@@ -73,15 +95,16 @@
       }
 
       .content {
-        padding: 20px 10px;
+        padding: 15px;
+        max-height: none;
       }
 
       .content p {
-        font-size: 1.1em;
+        font-size: 1.05em;
       }
 
-      .race-date {
-        font-size: 1.25em;
+      .content h1 {
+        font-size: 1.3em;
       }
     }
   </style>
@@ -97,34 +120,35 @@
     </ul>
   </nav>
 
-  <div class="content">
-    <h1>The 2025 race will commence on Saturday, September 20th at 5pm sharp</h1>
-    <p class="race-date"></p>
+  <div class="main-content">
+    <div class="content">
+      <h1>The 2025 race will commence on Saturday, September 20th at 5pm sharp</h1>
 
-    <p>This is a course open to the public.<br>
-      Be respectful to pedestrians on the sidewalk.<br>
-      Pedestrians have right of way.</p>
+      <p>This is a course open to the public.<br>
+        Be respectful to pedestrians on the sidewalk.<br>
+        Pedestrians have right of way.</p>
 
-    <hr>
+      <hr>
 
-    <p>The start and finish line is on the corner of President & Smith.<br>
-      Your race ends once you reach 21.1km / 13.1 miles & continue to finish your current lap.</p>
+      <p>The start and finish line is on the corner of President & Smith.<br>
+        Your race ends once you reach 21.1km / 13.1 miles & continue to finish your current lap.</p>
 
-    <hr>
+      <hr>
 
-    <p>The loop around Carroll Park is roughly 400m.<br>
-      52.75 laps = a half marathon.<br>
-      Each runner should use their GPS watch to track their total distance.<br>
+      <p>The loop around Carroll Park is roughly 400m.<br>
+        52.75 laps = a half marathon.<br>
+        Each runner should use their GPS watch to track their total distance.</p>
 
-    <hr>
+      <hr>
 
-    <p>A water station will be on the corner of President & Smith.<br>
-      Spectators can watch at any point along the course, or while enjoying a beer at the Gowanus Yacht Club across the road.</p>
+      <p>A water station will be on the corner of President & Smith.<br>
+        Spectators can watch at any point along the course, or while enjoying a beer at the Gowanus Yacht Club across the road.</p>
 
-    <hr>
+      <hr>
 
-    <p>Top three finishers will receive hearty handshakes from spectators at the official finish party at Gowanus Yacht Club.<br>
-      Non-placing finishers may also receive hearty handshakes upon request at the official finish party at Gowanus Yacht Club.</p>
+      <p>Top three finishers will receive hearty handshakes from spectators at the official finish party at Gowanus Yacht Club.<br>
+        Non-placing finishers may also receive hearty handshakes upon request at the official finish party at Gowanus Yacht Club.</p>
+    </div>
   </div>
 </body>
 </html>
