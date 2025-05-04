@@ -1,110 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Race Registration</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Race Registration</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: url('carrollparkgif.gif') no-repeat center center fixed;
-            background-size: cover;
-        }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('carrollparkgif.gif') no-repeat center center fixed;
+      background-size: cover;
+    }
 
-        .site-nav {
-            background-color: #333;
-            padding: 10px 0;
-            text-align: center;
-        }
+    .site-nav {
+      background-color: #333;
+      padding: 10px 0;
+      text-align: center;
+    }
 
-        .site-nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+    .site-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 
-        .site-nav li {
-            display: inline-block;
-            margin: 0 15px;
-        }
+    .site-nav li {
+      display: inline-block;
+      margin: 0 15px;
+    }
 
-        .site-nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-        }
+    .site-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
 
-        .site-nav a:hover {
-            text-decoration: underline;
-        }
+    .site-nav a:hover {
+      text-decoration: underline;
+    }
 
-        .page-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 60px 20px;
-            min-height: 100vh;
-        }
+    .page-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      min-height: 100vh;
+    }
 
-        .form-container {
-            background: rgba(255, 255, 255, 0.65);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            max-width: 680px;
-            width: 100%;
-        }
+    .form-container {
+      background: rgba(255, 255, 255, 0.55); /* more transparent */
+      padding: 25px;
+      border-radius: 8px; /* slightly thinner border radius */
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      max-width: 560px; /* narrower form */
+      width: 100%;
+      text-align: center;
+    }
 
-        iframe {
-            width: 100%;
-            height: 645px;
-            border: none;
-        }
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
 
-        @media (max-width: 768px) {
-            .site-nav li {
-                display: block;
-                margin: 10px 0;
-            }
+    iframe {
+      width: 100%;
+      height: 645px;
+      border: none;
+    }
 
-            .form-container {
-                padding: 20px;
-                background: rgba(255, 255, 255, 0.75);
-            }
+    @media (max-width: 768px) {
+      .site-nav li {
+        display: block;
+        margin: 10px 0;
+      }
 
-            iframe {
-                height: 700px;
-            }
-        }
-    </style>
+      .form-container {
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.65);
+        max-width: 100%;
+      }
+
+      iframe {
+        height: 700px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav class="site-nav">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="course-map.html">Course Map</a></li>
-            <li><a href="register.html">Register</a></li>
-            <li><a href="aid-station.html">Info</a></li>
-            <li><a href="results.html">Results</a></li>
-        </ul>
-    </nav>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="course-map.html">Course Map</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="aid-station.html">Info</a></li>
+      <li><a href="results.html">Results</a></li>
+    </ul>
+  </nav>
 
-    <div class="page-wrapper">
-        <div class="form-container">
-            <h1>Register Below</h1>
-            <iframe 
-                src="https://docs.google.com/forms/d/e/1FAIpQLSfdxuStluaioch7u8KWLjlGyPwcMO1dRzHj-mH5SvSxeVi3EQ/viewform?embedded=true" 
-                frameborder="0" marginheight="0" marginwidth="0">
-                Loading…
-            </iframe>
-        </div>
+  <div class="page-wrapper">
+    <div class="form-container">
+      <h1>Register Below</h1>
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSfdxuStluaioch7u8KWLjlGyPwcMO1dRzHj-mH5SvSxeVi3EQ/viewform?embedded=true" 
+        frameborder="0" marginheight="0" marginwidth="0">
+        Loading…
+      </iframe>
     </div>
+  </div>
 </body>
 </html>
