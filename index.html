@@ -14,14 +14,15 @@
       margin: 0;
       padding: 0;
       font-family: 'Inter', sans-serif;
-      height: 100%;
-      overflow: hidden; /* Prevent scroll */
+      min-height: 100vh;
     }
 
     .site-nav {
       background-color: #333;
       padding: 10px 0;
       text-align: center;
+      z-index: 1;
+      position: relative;
     }
 
     .site-nav ul {
@@ -47,12 +48,12 @@
     }
 
     .hero-wrapper {
-      height: calc(100vh - 60px); /* Account for nav height */
+      min-height: calc(100vh - 60px); /* adjust if nav height changes */
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 40px 20px;
       text-align: center;
     }
 
