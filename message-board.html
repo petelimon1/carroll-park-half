@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Message Board</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .comment-container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 6px;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav li {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .comment-container {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="course-map.html">Course Map</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="aid-station.html">Info</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li><a href="message-board.html">Message Board</a></li>
+    </ul>
+  </nav>
+
+  <div class="comment-container">
+    <h1>Message Board</h1>
+    <div class="commentbox"></div>
+  </div>
+
+  <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+  <script>
+    commentBox('YOUR_PROJECT_ID');
+  </script>
+</body>
+</html>
