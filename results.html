@@ -21,52 +21,79 @@
       font-family: 'Inter', sans-serif;
       text-align: center;
       background: transparent;
-      color: #3b2f2f;
+      color: #111; /* darker ink for contrast */
     }
 
-    /* Page-specific background (updated PNG) */
+    /* Background image */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      z-index: -1;
+      z-index: -2; /* behind the scrim */
       background: url("cph-background.png") no-repeat center center fixed;
       background-size: cover;
     }
 
+    /* Soft white scrim over the background to reduce noise */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1; /* above bg, below content */
+      background: rgba(255, 255, 255, 0.55); /* adjust 0.45–0.65 to taste */
+    }
+
     .year-selector {
-      margin: 100px auto 20px; /* space for floating nav */
+      margin: 100px auto 20px; /* leave space for floating nav */
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      padding: 12px 16px;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
     }
 
-    .year-selector label {
-      font-weight: 600;
-    }
-
+    .year-selector label { font-weight: 700; }
     select {
-      padding: 8px;
+      padding: 10px 12px;
       font-size: 15px;
-      margin: 10px auto 20px;
+      margin-top: 8px;
       width: 100%;
       max-width: 280px;
       display: block;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.15);
+      background: #fff;
     }
 
+    /* Card used for dynamic results (if your JS writes into #resultsContainer) */
     #resultsContainer {
-      margin: 10px auto;
-      padding: 0 10px;
+      margin: 20px auto 0;
+      padding: 16px 14px;
       max-width: 740px;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
     }
 
+    /* Static “Historical Results” section */
     .content {
-      padding: 20px 15px;
+      padding: 22px 18px;
       max-width: 700px;
       margin: 20px auto 40px;
-      background-color: rgba(255, 255, 255, 0.75);
-      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 10px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
     }
 
-    h1, h2 { margin: 10px 0 15px; }
-    p      { margin: 10px 0 20px; }
+    h1 { margin: 6px 0 12px; font-size: 2rem; }
+    h2 { margin: 18px 0 12px; font-size: 1.3rem; }
+    p  { margin: 10px 0 18px; line-height: 1.55; color: #222; }
 
     .winner-photo {
       max-width: 260px;
@@ -75,27 +102,27 @@
       display: block;
       margin: 10px auto;
       border: 2px solid #c0a96f;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
     }
 
-    figure {
-      margin: 10px 0 20px;
-      text-align: center;
-    }
-
+    figure { margin: 10px 0 20px; text-align: center; }
     figcaption {
       font-style: italic;
-      color: #5a4c3a;
-      font-size: 0.95em;
-      margin-top: 5px;
-      max-width: 300px;
+      color: #4d463c;
+      font-size: 0.97em;
+      margin-top: 6px;
+      max-width: 320px;
       margin-left: auto;
       margin-right: auto;
+      line-height: 1.45;
     }
 
     @media (max-width: 768px) {
-      .content { padding: 15px 10px; }
+      .content { padding: 16px 12px; }
       .winner-photo { max-width: 90%; }
-      figcaption { max-width: 90%; }
+      figcaption { max-width: 92%; }
+      h1 { font-size: 1.6rem; }
+      h2 { font-size: 1.2rem; }
     }
   </style>
 </head>
@@ -103,7 +130,7 @@
   <!-- Nav is injected from nav.html by assets/js/nav.js -->
 
   <div class="year-selector">
-    <label for="yearSelect"><strong>Select a Year:</strong></label><br>
+    <label for="yearSelect"><strong>Select a Year:</strong></label>
     <select id="yearSelect">
       <option disabled selected value="">-- Select a Year --</option>
     </select>
