@@ -14,9 +14,7 @@
   <style>
     * { box-sizing: border-box; }
 
-    :root {
-      --bg-tile: clamp(240px, 40vw, 520px); /* responsive pattern size */
-    }
+    :root { --bg-tile: clamp(240px, 40vw, 520px); }
 
     html, body {
       margin: 0;
@@ -77,40 +75,33 @@
     /* Results card */
     #resultsContainer {
       margin: 20px auto 0;
-      padding: 18px 16px;
+      padding: 22px 18px;
       max-width: 740px;
-      text-align: left;
+      text-align: center;              /* center all content */
       background: rgba(255,255,255,0.92);
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
       border-radius: 10px;
       box-shadow: 0 12px 32px rgba(0,0,0,0.12);
     }
-    #resultsContainer h2 { margin: 4px 0 12px; font-size: 1.6rem; }
-    #resultsContainer h3 { margin: 18px 0 8px; font-size: 1.15rem; }
+    #resultsContainer h2 { margin: 0 0 12px; font-size: 1.9rem; }
+    #resultsContainer h3 { margin: 18px 0 10px; font-size: 1.1rem; }
 
+    /* Centered lists */
     .podium, .finishers {
-      padding-left: 1.2rem;
-      margin: 6px 0 14px;
+      list-style: none;     /* we print 1st/2nd/3rd manually */
+      padding-left: 0;
+      margin: 6px auto 14px;
     }
-    .podium li, .finishers li { margin: 6px 0; line-height: 1.4; }
+    .podium li, .finishers li {
+      margin: 6px 0;
+      line-height: 1.45;
+    }
+    /* Slightly larger font for Top three */
+    .podium li { font-size: 1.15rem; font-weight: 600; }
+
     .podium a, .finishers a { color: #0f4ab8; text-decoration: none; }
     .podium a:hover, .finishers a:hover { text-decoration: underline; }
-
-    /* Static intro card */
-    .content {
-      padding: 20px 18px;
-      max-width: 700px;
-      margin: 20px auto 40px;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      border-radius: 10px;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
-      text-align: center;
-    }
-    .content h1 { margin: 6px 0 12px; font-size: 2rem; }
-    .content p  { margin: 10px 0 18px; line-height: 1.55; color: #222; }
 
     /* Carousel */
     .carousel {
@@ -131,58 +122,17 @@
       -webkit-overflow-scrolling: touch;
     }
     .carousel-track::-webkit-scrollbar { display: none; }
-    .slide {
-      position: relative;
-      flex: 0 0 100%;
-      scroll-snap-align: center;
-      min-height: 300px;
-      display: grid;
-      place-items: center;
-      background: #fff;
-    }
-    .slide img {
-      display: block;
-      width: 100%;
-      height: auto;
-      max-height: 68vh;
-      object-fit: contain;
-      background: #fff;
-    }
-
-    .carousel-nav {
-      position: absolute;
-      inset: auto 0 8px 0;
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      pointer-events: none;
-    }
-    .dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: rgba(0,0,0,0.35);
-      pointer-events: auto;
-      border: 0;
-      cursor: pointer;
-    }
-    .dot.active { background: rgba(0,0,0,0.75); }
-
+    .slide { flex: 0 0 100%; scroll-snap-align: center; min-height: 300px; display: grid; place-items: center; background: #fff; }
+    .slide img { width: 100%; height: auto; max-height: 68vh; object-fit: contain; background: #fff; }
     .prev, .next {
       position: absolute; top: 50%; transform: translateY(-50%);
-      width: 40px; height: 40px; border-radius: 999px;
-      border: 0; background: rgba(0,0,0,0.5); color: #fff;
-      cursor: pointer;
+      width: 40px; height: 40px; border-radius: 999px; border: 0;
+      background: rgba(0,0,0,0.5); color: #fff; cursor: pointer;
     }
-    .prev { left: 10px; }
-    .next { right: 10px; }
-
-    /* Hide carousel container if no slides are present */
+    .prev { left: 10px; } .next { right: 10px; }
     .carousel.hidden { display: none; }
 
     @media (max-width: 360px) { :root { --bg-tile: 220px; } }
-    @media (max-width: 768px) {
-      .content { padding: 16px 12px; }
-      .content h1 { font-size: 1.6rem; }
-    }
   </style>
 </head>
 <body>
@@ -208,38 +158,30 @@
     <h3>Finishers</h3>
     <ul class="finishers">
       <li><a href="https://www.strava.com/activities/15882550947" target="_blank" rel="noopener noreferrer">Kenny Kusiak</a></li>
-      <li><span>Josh Berger</span></li>
-      <li><span>Robert Kendrick Holmes</span></li>
+      <li>Josh Berger</li>
+      <li>Robert Kendrick Holmes</li>
       <li><a href="https://www.strava.com/activities/15882586026/overview" target="_blank" rel="noopener noreferrer">Annie Muire</a></li>
-      <li><span>Anna Katrina Lockwood</span></li>
+      <li>Anna Katrina Lockwood</li>
     </ul>
 
     <!-- Photo carousel (add <img> slides later) -->
     <section class="carousel" id="carousel" aria-label="Race photos">
       <button class="prev" type="button" aria-label="Previous slide">‹</button>
       <div class="carousel-track" id="carouselTrack">
-        <!--
-          Add photos like:
-          <div class="slide"><img src="photos/2025-01.jpg" alt="Finish line celebration, 2025"></div>
-          <div class="slide"><img src="photos/2025-02.jpg" alt="Lead pack around the park, 2025"></div>
+        <!-- Add photos like:
+        <div class="slide"><img src="photos/2025-01.jpg" alt="Finish line celebration, 2025"></div>
+        <div class="slide"><img src="photos/2025-02.jpg" alt="Lead pack around the park, 2025"></div>
         -->
       </div>
       <button class="next" type="button" aria-label="Next slide">›</button>
-      <div class="carousel-nav" id="carouselDots" aria-hidden="true"></div>
     </section>
   </div>
 
-  <div class="content">
-    <h1>New Era Results</h1>
-    <p>Beginning with the 2025 edition, results are recorded here under the “New Era”. Historical records through 2024 remain on the Historical Results page.</p>
-  </div>
-
   <script>
-    // Hide carousel if no slides yet; build dots; wire controls (no dependencies)
+    // Hide carousel if no slides; wire controls
     (function () {
       const carousel = document.getElementById('carousel');
       const track = document.getElementById('carouselTrack');
-      const dotsWrap = document.getElementById('carouselDots');
       const prev = carousel.querySelector('.prev');
       const next = carousel.querySelector('.next');
 
@@ -249,49 +191,17 @@
         return;
       }
 
-      // Build dots
-      slides.forEach((_, i) => {
-        const b = document.createElement('button');
-        b.className = 'dot' + (i === 0 ? ' active' : '');
-        b.type = 'button';
-        b.addEventListener('click', () => {
-          track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
-        });
-        dotsWrap.appendChild(b);
-      });
-
-      // Update active dot on scroll
-      const updateDots = () => {
-        const idx = Math.round(track.scrollLeft / track.clientWidth);
-        dotsWrap.querySelectorAll('.dot').forEach((d, i) => {
-          d.classList.toggle('active', i === idx);
-        });
+      const goTo = (idx) => {
+        idx = Math.max(0, Math.min(idx, slides.length - 1));
+        track.scrollTo({ left: idx * track.clientWidth, behavior: 'smooth' });
       };
-      track.addEventListener('scroll', () => {
-        // throttle a bit
-        window.requestAnimationFrame(updateDots);
-      });
 
-      // Prev/Next
-      prev.addEventListener('click', () => {
-        const idx = Math.round(track.scrollLeft / track.clientWidth);
-        const target = Math.max(0, idx - 1);
-        track.scrollTo({ left: target * track.clientWidth, behavior: 'smooth' });
-      });
-      next.addEventListener('click', () => {
-        const idx = Math.round(track.scrollLeft / track.clientWidth);
-        const target = Math.min(slides.length - 1, idx + 1);
-        track.scrollTo({ left: target * track.clientWidth, behavior: 'smooth' });
-      });
-
-      // Resize handler keeps slides aligned
-      window.addEventListener('resize', () => {
-        const idx = Math.round(track.scrollLeft / track.clientWidth);
-        track.scrollTo({ left: idx * track.clientWidth });
-      }, { passive: true });
+      prev.addEventListener('click', () => goTo(Math.round(track.scrollLeft / track.clientWidth) - 1));
+      next.addEventListener('click', () => goTo(Math.round(track.scrollLeft / track.clientWidth) + 1));
+      window.addEventListener('resize', () => goTo(Math.round(track.scrollLeft / track.clientWidth)), { passive: true });
     })();
 
-    // Keep for parity with other pages; only one year for now.
+    // Only one year for now; keep smooth scroll behavior.
     document.getElementById('yearSelect').addEventListener('change', () => {
       document.getElementById('resultsContainer').scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
@@ -301,3 +211,4 @@
   <script defer src="assets/js/nav.js"></script>
 </body>
 </html>
+
