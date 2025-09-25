@@ -24,7 +24,7 @@
       color: #3b2f2f;
     }
 
-    /* Page-specific background */
+    /* Page-specific background (updated PNG) */
     body::before {
       content: "";
       position: fixed;
@@ -35,7 +35,7 @@
     }
 
     .year-selector {
-      margin: 100px auto 20px; /* extra top space for nav */
+      margin: 100px auto 20px; /* space for floating nav */
     }
 
     .year-selector label {
@@ -54,6 +54,7 @@
     #resultsContainer {
       margin: 10px auto;
       padding: 0 10px;
+      max-width: 740px;
     }
 
     .content {
@@ -108,7 +109,7 @@
     </select>
   </div>
 
-  <div id="resultsContainer"></div>
+  <div id="resultsContainer" role="region" aria-live="polite"></div>
 
   <div class="content">
     <h1>Historical Results</h1>
@@ -118,19 +119,19 @@
     <h2>Winner – 1890</h2>
     <figure>
       <img src="1890%20runner.png" alt="1890 winner at Court and President Streets" class="winner-photo">
-      <figcaption>1890 — The inaugural champion, Zip Runnington, photographed by George Eastman on his Kodak Box Camera on the corner of Court & President</figcaption>
+      <figcaption>1890 — The inaugural champion, Zip Runnington, photographed by George Eastman on his Kodak Box Camera on the corner of Court &amp; President</figcaption>
     </figure>
 
     <h2>Top 3 finishers – 1943</h2>
     <figure>
       <img src="1943runners.png" alt="1943 runners at Court and President Streets" class="winner-photo">
-      <figcaption>1943 — Top three finishers recently returned from the war. Pictured at Court & President in wartime Carroll Gardens.</figcaption>
+      <figcaption>1943 — Top three finishers recently returned from the war. Pictured at Court &amp; President in wartime Carroll Gardens.</figcaption>
     </figure>
 
     <h2>Top 3 finishers – 1969</h2>
     <figure>
       <img src="1969runners.png" alt="1969 runners at Court and President Streets" class="winner-photo">
-      <figcaption>1969 — Post race celebrations at Court & President</figcaption>
+      <figcaption>1969 — Post race celebrations at Court &amp; President</figcaption>
     </figure>
 
     <h2>Winner – 1983</h2>
