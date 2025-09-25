@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Era Results</title>
+
+  <!-- Shared nav styles -->
+  <link href="assets/css/nav.css" rel="stylesheet" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    :root {
+      /* Responsive tile size for background pattern */
+      --bg-tile: clamp(240px, 40vw, 520px);
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      text-align: center;
+      background: transparent;
+      color: #111;
+    }
+
+    /* Repeating, fixed background pattern (mobile-friendly) */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background-image: url("cph-background.png");
+      background-repeat: repeat;
+      background-position: top left;
+      background-attachment: fixed;
+      background-size: var(--bg-tile) auto;
+    }
+
+    /* Soft scrim to improve legibility over the busy pattern */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .year-selector {
+      margin: 100px auto 20px; /* leave space for floating nav */
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      padding: 12px 16px;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    }
+
+    .year-selector label { font-weight: 700; }
+
+    select {
+      padding: 10px 12px;
+      font-size: 15px;
+      margin-top: 8px;
+      width: 100%;
+      max-width: 280px;
+      display: block;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.15);
+      background: #fff;
+    }
+
+    /* Card used for results content */
+    #resultsContainer {
+      margin: 20px auto 0;
+      padding: 16px 14px;
+      max-width: 740px;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+      text-align: left;
+    }
+
+    /* Static header card */
+    .content {
+      padding: 22px 18px;
+      max-width: 700px;
+      margin: 20px auto 40px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 10px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    }
+
+    h1 { margin: 6px 0 12px; font-size: 2rem; }
+    h2 { margin: 18px 0 12px; font-size: 1.3rem; }
+    p  { margin: 10px 0 18px; line-height: 1.55; color: #222; }
+
+    @media (max-width: 360px) { :root { --bg-tile: 220px; } }
+    @media (max-width: 768px) {
+      .content { padding: 16px 12px; }
+      h1 { font-size: 1.6rem; }
+      h2 { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Nav is injected from nav.html by assets/js/nav.js -->
+
+  <div class="year-selector">
+    <label for="yearSelect"><strong>Select a Year:</strong></label>
+    <select id="yearSelect">
+      <option selected value="2025">2025</option>
+    </select>
+  </div>
+
+  <div id="resultsContainer" role="region" aria-live="polite">
+    <!-- Default 2025 block -->
+    <h2>2025 Results</h2>
+    <p>Official “New Era” results will be posted here after the 2025 race is complete.</p>
+    <!-- Replace the paragraph above with structured results when ready. -->
+  </div>
+
+  <div class="content">
+    <h1>New Era Results</h1>
+    <p>Beginning with the 2025 edition, results are recorded here under the “New Era”. Historical records through 2024 remain on the Historical Results page.</p>
+  </div>
+
+  <!-- Optional: auto-scroll to the results card if the year is changed -->
+  <script>
+    const selectEl = document.getElementById('yearSelect');
+    selectEl.addEventListener('change', () => {
+      document.getElementById('resultsContainer').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  </script>
+
+  <!-- Shared nav loader -->
+  <script defer src="assets/js/nav.js"></script>
+</body>
+</html>
