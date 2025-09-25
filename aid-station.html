@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Info</title>
 
   <!-- Shared nav styles -->
@@ -13,13 +13,13 @@
 
   <style>
     * { box-sizing: border-box; }
-
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       font-family: 'Inter', sans-serif;
       background: transparent;
+      text-align: center;
     }
 
     /* Page-specific background */
@@ -33,11 +33,11 @@
     }
 
     .main-content {
-      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 100px 20px 40px; /* top padding so nav doesn't overlap */
+      padding: 100px 20px 40px; /* top space so the floating nav doesn't overlap */
+      min-height: 100vh;
     }
 
     .content {
@@ -50,16 +50,8 @@
       text-align: center;
     }
 
-    .content h1 {
-      font-size: 1.6em;
-      margin-top: 0;
-    }
-
-    .content p {
-      font-size: 1.2em;
-      line-height: 1.5;
-      margin-bottom: 1em;
-    }
+    .content h1 { font-size: 1.6em; margin-top: 0; }
+    .content p  { font-size: 1.2em; line-height: 1.5; margin-bottom: 1em; }
 
     hr {
       margin: 20px 0;
@@ -68,11 +60,7 @@
     }
 
     @media (max-width: 768px) {
-      .content {
-        padding: 15px;
-        max-height: none;
-      }
-
+      .content { padding: 15px; max-height: none; }
       .content p { font-size: 1.05em; }
       .content h1 { font-size: 1.3em; }
     }
@@ -91,8 +79,8 @@
 
       <hr>
 
-      <p>The start and finish line is on the corner of President & Smith.<br>
-        Your race ends once you reach 21.1km / 13.1 miles & continue to finish your current lap.</p>
+      <p>The start and finish line is on the corner of President &amp; Smith.<br>
+        Your race ends once you reach 21.1km / 13.1 miles &amp; continue to finish your current lap.</p>
 
       <hr>
 
@@ -102,7 +90,7 @@
 
       <hr>
 
-      <p>A water station will be on the corner of President & Smith.<br>
+      <p>A water station will be on the corner of President &amp; Smith.<br>
         Spectators can watch at any point along the course, or while enjoying a beer at the Gowanus Yacht Club across the road.</p>
 
       <hr>
