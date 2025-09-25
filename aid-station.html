@@ -4,53 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Info</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Shared nav styles -->
+  <link href="assets/css/nav.css" rel="stylesheet" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
+      background: transparent;
     }
 
-    body {
-      background: url('carrollparkcorner.png') no-repeat center center fixed;
+    /* Page-specific background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: url("carrollparkcorner.png") no-repeat center center fixed;
       background-size: cover;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .site-nav {
-      background-color: #333;
-      padding: 10px 0;
-      text-align: center;
-      flex-shrink: 0;
-    }
-
-    .site-nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .site-nav li {
-      display: inline-block;
-      margin: 0 15px;
-    }
-
-    .site-nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    .site-nav a:hover {
-      text-decoration: underline;
     }
 
     .main-content {
@@ -58,7 +37,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 100px 20px 40px; /* top padding so nav doesn't overlap */
     }
 
     .content {
@@ -66,7 +45,7 @@
       padding: 20px 30px;
       border-radius: 10px;
       max-width: 800px;
-      max-height: calc(100vh - 80px); /* fits within screen incl. nav */
+      max-height: calc(100vh - 120px);
       overflow-y: auto;
       text-align: center;
     }
@@ -89,37 +68,18 @@
     }
 
     @media (max-width: 768px) {
-      .site-nav li {
-        display: block;
-        margin: 10px 0;
-      }
-
       .content {
         padding: 15px;
         max-height: none;
       }
 
-      .content p {
-        font-size: 1.05em;
-      }
-
-      .content h1 {
-        font-size: 1.3em;
-      }
+      .content p { font-size: 1.05em; }
+      .content h1 { font-size: 1.3em; }
     }
   </style>
 </head>
 <body>
-  <nav class="site-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="course-map.html">Course Map</a></li>
-      <li><a href="register.html">Register</a></li>
-      <li><a href="aid-station.html">Info</a></li>
-      <li><a href="results.html">Results</a></li>
-      <li><a href="message-board.html">Message Board</a></li>
-    </ul>
-  </nav>
+  <!-- Nav is injected from nav.html by assets/js/nav.js -->
 
   <div class="main-content">
     <div class="content">
@@ -151,5 +111,8 @@
         Non-placing finishers may also receive hearty handshakes upon request at the official finish party at Gowanus Yacht Club.</p>
     </div>
   </div>
+
+  <!-- Shared nav loader -->
+  <script defer src="assets/js/nav.js"></script>
 </body>
 </html>
