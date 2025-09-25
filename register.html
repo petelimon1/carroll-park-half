@@ -4,61 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Race Registration</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Shared nav styles -->
+  <link href="assets/css/nav.css" rel="stylesheet" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('carrollparkgif.gif') no-repeat center center fixed;
-      background-size: cover;
-    }
-
-    .site-nav {
-      background-color: #333;
-      padding: 10px 0;
-      text-align: center;
-    }
-
-    .site-nav ul {
-      list-style: none;
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      background: transparent;
     }
 
-    .site-nav li {
-      display: inline-block;
-      margin: 0 15px;
-    }
-
-    .site-nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    .site-nav a:hover {
-      text-decoration: underline;
+    /* Page-specific background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: url("carrollparkgif.gif") no-repeat center center fixed;
+      background-size: cover;
     }
 
     .page-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 60px 20px;
+      padding: 100px 20px 60px;
       min-height: 100vh;
     }
 
     .form-container {
-      background: rgba(255, 255, 255, 0.55); /* more transparent */
+      background: rgba(255, 255, 255, 0.55);
       padding: 25px;
-      border-radius: 8px; /* slightly thinner border radius */
+      border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      max-width: 560px; /* narrower form */
+      max-width: 560px;
       width: 100%;
       text-align: center;
     }
@@ -76,34 +63,17 @@
     }
 
     @media (max-width: 768px) {
-      .site-nav li {
-        display: block;
-        margin: 10px 0;
-      }
-
       .form-container {
         padding: 20px;
         background: rgba(255, 255, 255, 0.65);
         max-width: 100%;
       }
-
-      iframe {
-        height: 700px;
-      }
+      iframe { height: 700px; }
     }
   </style>
 </head>
 <body>
-  <nav class="site-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="course-map.html">Course Map</a></li>
-      <li><a href="register.html">Register</a></li>
-      <li><a href="aid-station.html">Info</a></li>
-      <li><a href="results.html">Results</a></li>
-      <li><a href="message-board.html">Message Board</a></li>
-    </ul>
-  </nav>
+  <!-- Nav is injected from nav.html by assets/js/nav.js -->
 
   <div class="page-wrapper">
     <div class="form-container">
@@ -115,5 +85,8 @@
       </iframe>
     </div>
   </div>
+
+  <!-- Shared nav loader -->
+  <script defer src="assets/js/nav.js"></script>
 </body>
 </html>
