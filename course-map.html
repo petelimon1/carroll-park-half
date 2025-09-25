@@ -4,7 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Carroll Park Half Marathon – Course Map</title>
+
+  <!-- Shared nav styles -->
+  <link href="assets/css/nav.css" rel="stylesheet" />
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     * { box-sizing: border-box; }
 
@@ -16,7 +22,7 @@
       background: transparent;
     }
 
-    /* Background image for course map page */
+    /* Page-specific background */
     body::before {
       content: "";
       position: fixed;
@@ -26,147 +32,12 @@
       background-size: cover;
     }
 
-    /* ===== Floating Glass Nav ===== */
-    .nav-wrap {
-      position: sticky;
-      top: 16px;
-      display: flex;
-      justify-content: center;
-      padding: 0 16px;
-      z-index: 20;
-    }
-
-    .site-nav {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      background: rgba(255,255,255,0.65);
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 999px;
-      backdrop-filter: saturate(140%) blur(10px);
-      -webkit-backdrop-filter: saturate(140%) blur(10px);
-      box-shadow:
-        0 2px 8px rgba(0,0,0,0.08),
-        0 12px 30px rgba(0,0,0,0.10);
-      max-width: min(100%, 920px);
-      width: auto;
-    }
-
-    .brand {
-      font-weight: 700;
-      padding: 8px 12px;
-      letter-spacing: 0.02em;
-      color: #1f2937;
-      white-space: nowrap;
-    }
-
-    .nav-list {
-      list-style: none;
-      display: flex;
-      gap: 6px;
-      margin: 0;
-      padding: 0;
-      flex-wrap: nowrap;
-    }
-
-    .nav-list a {
-      position: relative;
-      display: inline-block;
-      padding: 8px 12px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
-      color: #111;
-      opacity: 0.9;
-      transition: opacity 180ms ease;
-    }
-
-    .nav-list a:hover { opacity: 1; }
-
-    .nav-list a::after {
-      content: "";
-      position: absolute;
-      left: 12px;
-      right: 12px;
-      bottom: 6px;
-      height: 2px;
-      background: #111;
-      border-radius: 2px;
-      transform: scaleX(0);
-      transform-origin: center;
-      transition: transform 200ms ease-in-out;
-      opacity: 0.85;
-    }
-    .nav-list a:hover::after,
-    .nav-list a[aria-current="page"]::after {
-      transform: scaleX(1);
-    }
-
-    /* ===== Mobile nav ===== */
-    .hamburger {
-      display: none;
-      margin-left: auto;
-      border: 0;
-      background: transparent;
-      padding: 8px 10px;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    .hamburger-box { width: 22px; height: 16px; position: relative; }
-    .hamburger-line {
-      position: absolute; left: 0; right: 0; height: 2px; background: #111; border-radius: 999px;
-      transition: transform 200ms ease, opacity 200ms ease;
-    }
-    .hamburger-line:nth-child(1) { top: 0; }
-    .hamburger-line:nth-child(2) { top: 7px; }
-    .hamburger-line:nth-child(3) { top: 14px; }
-
-    .drawer {
-      display: none;
-      position: fixed;
-      top: 0; right: 0; bottom: 0;
-      width: min(86vw, 360px);
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: -8px 0 30px rgba(0,0,0,0.18);
-      padding: 76px 20px 24px;
-      z-index: 30;
-    }
-    .drawer ul { list-style: none; padding: 0; margin: 0; }
-    .drawer a {
-      display: block; padding: 14px 8px; font-weight: 700; color: #111; text-decoration: none;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-    }
-    .scrim {
-      display: none;
-      position: fixed; inset: 0; z-index: 25;
-      background: rgba(0,0,0,0.28);
-    }
-    .drawer.open { display: block; }
-    .scrim.open { display: block; }
-    .hamburger.open .hamburger-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open .hamburger-line:nth-child(2) { opacity: 0; }
-    .hamburger.open .hamburger-line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    @media (max-width: 900px) {
-      .brand { display: none; }
-    }
-    @media (max-width: 760px) {
-      .nav-list { display: none; }
-      .hamburger { display: inline-flex; }
-      .site-nav { padding: 8px 12px; }
-    }
-
-    /* ===== Page-specific layout ===== */
     .main-content {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      padding: 100px 10px 40px; /* top padding so nav doesn’t overlap */
+      padding: 100px 10px 40px; /* extra top padding so nav doesn't overlap */
       text-align: center;
     }
 
@@ -203,40 +74,7 @@
   </style>
 </head>
 <body>
-  <!-- Floating nav -->
-  <div class="nav-wrap">
-    <nav class="site-nav" aria-label="Primary">
-      <div class="brand">Carroll Park Half</div>
-      <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="course-map.html" aria-current="page">Course Map</a></li>
-        <li><a href="register.html">Register</a></li>
-        <li><a href="aid-station.html">Info</a></li>
-        <li><a href="results.html">Results</a></li>
-        <li><a href="message-board.html">Message Board</a></li>
-      </ul>
-      <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
-        <span class="hamburger-box">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </span>
-      </button>
-    </nav>
-  </div>
-
-  <!-- Mobile drawer + scrim -->
-  <div class="scrim" id="scrim" hidden></div>
-  <nav class="drawer" id="mobile-drawer" aria-label="Mobile Primary" hidden>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="course-map.html">Course Map</a></li>
-      <li><a href="register.html">Register</a></li>
-      <li><a href="aid-station.html">Info</a></li>
-      <li><a href="results.html">Results</a></li>
-      <li><a href="message-board.html">Message Board</a></li>
-    </ul>
-  </nav>
+  <!-- Nav is injected from nav.html by assets/js/nav.js -->
 
   <div class="main-content">
     <div class="page-wrapper">
@@ -254,26 +92,7 @@
   </div>
 
   <script src="https://strava-embeds.com/embed.js"></script>
-  <script>
-    // Mobile nav drawer logic
-    const btn = document.querySelector('.hamburger');
-    const drawer = document.getElementById('mobile-drawer');
-    const scrim = document.getElementById('scrim');
-
-    function openDrawer(open) {
-      btn.classList.toggle('open', open);
-      drawer.classList.toggle('open', open);
-      scrim.classList.toggle('open', open);
-      btn.setAttribute('aria-expanded', String(open));
-      drawer.hidden = !open;
-      scrim.hidden = !open;
-    }
-
-    btn.addEventListener('click', () => openDrawer(!btn.classList.contains('open')));
-    scrim.addEventListener('click', () => openDrawer(false));
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') openDrawer(false);
-    });
-  </script>
+  <!-- Shared nav loader -->
+  <script defer src="assets/js/nav.js"></script>
 </body>
 </html>
