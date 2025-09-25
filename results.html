@@ -14,6 +14,11 @@
   <style>
     * { box-sizing: border-box; }
 
+    :root {
+      /* Responsive tile size for background pattern */
+      --bg-tile: clamp(240px, 40vw, 520px);
+    }
+
     html, body {
       margin: 0;
       padding: 0;
@@ -21,30 +26,33 @@
       font-family: 'Inter', sans-serif;
       text-align: center;
       background: transparent;
-      color: #111; /* darker ink for contrast */
+      color: #111;
     }
 
-    /* Background image */
+    /* Repeating, fixed background pattern (mobile-friendly) */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      z-index: -2; /* behind the scrim */
-      background: url("cph-background.png") no-repeat center center fixed;
-      background-size: cover;
+      z-index: -2;
+      background-image: url("cph-background.png");
+      background-repeat: repeat;
+      background-position: top left;
+      background-attachment: fixed;
+      background-size: var(--bg-tile) auto;
     }
 
-    /* Soft white scrim over the background to reduce noise */
+    /* Soft scrim to improve legibility over the busy pattern */
     body::after {
       content: "";
       position: fixed;
       inset: 0;
-      z-index: -1; /* above bg, below content */
-      background: rgba(255, 255, 255, 0.55); /* adjust 0.45–0.65 to taste */
+      z-index: -1;
+      background: rgba(255, 255, 255, 0.55);
     }
 
     .year-selector {
-      margin: 100px auto 20px; /* leave space for floating nav */
+      margin: 100px auto 20px;
       display: inline-block;
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(4px);
@@ -67,7 +75,7 @@
       background: #fff;
     }
 
-    /* Card used for dynamic results (if your JS writes into #resultsContainer) */
+    /* Card used for dynamic results injected by JS */
     #resultsContainer {
       margin: 20px auto 0;
       padding: 16px 14px;
@@ -79,7 +87,7 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.10);
     }
 
-    /* Static “Historical Results” section */
+    /* Static historical content */
     .content {
       padding: 22px 18px;
       max-width: 700px;
@@ -115,6 +123,10 @@
       margin-left: auto;
       margin-right: auto;
       line-height: 1.45;
+    }
+
+    @media (max-width: 360px) {
+      :root { --bg-tile: 220px; } /* tighter pattern on very small phones */
     }
 
     @media (max-width: 768px) {
