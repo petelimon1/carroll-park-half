@@ -2,26 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Carroll Park Half Marathon</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html, body {
       margin: 0;
       padding: 0;
-      font-family: 'Inter', sans-serif;
       height: 100%;
-      overflow: hidden;
-      /* Background image (place the PNG in the same folder). If your file name has a space, URL-encode it. */
-      background-image: url("CPH%20background.png");
-      background-repeat: repeat;
-      /* Tweak tile size as needed for density of the pattern */
-      background-size: 520px auto;
-      background-position: center;
+      font-family: 'Inter', sans-serif;
+      background: transparent;         /* background handled by ::before layer */
+    }
+
+    /* Fixed, full-viewport background (desktop + mobile) */
+    body::before {
+      content: "";
+      position: fixed;                  /* stays fixed while page scrolls */
+      inset: 0;                         /* cover entire viewport */
+      z-index: -1;                      /* behind all content */
+      background-image: url("cph-background.png");
+      background-repeat: no-repeat;     /* no tiling; uses the full image */
+      background-position: center center;
+      background-size: cover;           /* scale to cover on any screen */
+      pointer-events: none;
+      will-change: transform;           /* mobile GPU hint */
     }
 
     .site-nav {
@@ -29,84 +35,43 @@
       padding: 10px 0;
       text-align: center;
     }
-
-    .site-nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .site-nav li {
-      display: inline-block;
-      margin: 0 15px;
-    }
-
-    .site-nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    .site-nav a:hover {
-      text-decoration: underline;
-    }
+    .site-nav ul { margin: 0; padding: 0; list-style: none; }
+    .site-nav li { display: inline-block; margin: 0 15px; }
+    .site-nav a { color: #fff; text-decoration: none; font-weight: 700; font-size: 16px; }
+    .site-nav a:hover { text-decoration: underline; }
 
     .hero-wrapper {
-      height: calc(100vh - 60px); /* Adjust this if nav height changes */
+      min-height: calc(100vh - 60px);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 0 10px;
+      padding: 16px 10px 40px;
       text-align: center;
     }
 
     .hero-wrapper img {
       max-width: 100%;
-      max-height: 55vh;
+      width: 520px;
       height: auto;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .overlay {
       background: rgba(255, 255, 255, 0.85);
-      padding: 10px 20px;
+      padding: 12px 20px;
       border-radius: 8px;
       max-width: 90vw;
     }
 
-    h1 {
-      margin: 0 0 5px;
-      font-size: 1.6em;
-    }
-
-    p {
-      margin: 0;
-      font-size: 1.1em;
-    }
+    h1 { margin: 0 0 6px; font-size: 1.8rem; }
+    p  { margin: 0;        font-size: 1.1rem; }
 
     @media (max-width: 600px) {
-      .site-nav li {
-        display: block;
-        margin: 8px 0;
-      }
-
-      h1 {
-        font-size: 1.3em;
-      }
-
-      p {
-        font-size: 1em;
-      }
-
-      .overlay {
-        padding: 8px 15px;
-      }
-
-      .hero-wrapper img {
-        max-height: 45vh;
-      }
+      .site-nav li { display: block; margin: 8px 0; }
+      .hero-wrapper img { width: 78vw; max-width: 420px; }
+      h1 { font-size: 1.4rem; }
+      p  { font-size: 1rem; }
     }
   </style>
 </head>
