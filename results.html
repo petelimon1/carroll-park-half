@@ -4,63 +4,68 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Historical Results</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <style>
-    * {
-      box-sizing: border-box;
-    }
 
-    body {
-      font-family: Arial, sans-serif;
+  <!-- Shared nav styles -->
+  <link href="assets/css/nav.css" rel="stylesheet" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+      font-family: 'Inter', sans-serif;
       text-align: center;
-      background-color: #f4ecd8;
+      background: transparent;
       color: #3b2f2f;
     }
 
-    .site-nav {
-      background-color: #333;
-      padding: 10px 0;
+    /* Page-specific background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: url("cph-background.png") no-repeat center center fixed;
+      background-size: cover;
     }
 
-    .site-nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    .year-selector {
+      margin: 100px auto 20px; /* extra top space for nav */
     }
 
-    .site-nav li {
-      display: inline-block;
-      margin: 0 15px;
+    .year-selector label {
+      font-weight: 600;
     }
 
-    .site-nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
+    select {
+      padding: 8px;
+      font-size: 15px;
+      margin: 10px auto 20px;
+      width: 100%;
+      max-width: 280px;
+      display: block;
     }
 
-    .site-nav a:hover {
-      text-decoration: underline;
+    #resultsContainer {
+      margin: 10px auto;
+      padding: 0 10px;
     }
 
     .content {
       padding: 20px 15px;
       max-width: 700px;
-      margin: 20px auto;
+      margin: 20px auto 40px;
       background-color: rgba(255, 255, 255, 0.75);
       border-radius: 6px;
     }
 
-    h1, h2 {
-      margin: 10px 0 15px;
-    }
-
-    p {
-      margin: 10px 0 20px;
-    }
+    h1, h2 { margin: 10px 0 15px; }
+    p      { margin: 10px 0 20px; }
 
     .winner-photo {
       max-width: 260px;
@@ -86,55 +91,15 @@
       margin-right: auto;
     }
 
-    .year-selector {
-      margin: 15px auto;
-    }
-
-    select {
-      padding: 8px;
-      font-size: 15px;
-      margin: 10px auto 20px;
-      width: 100%;
-      max-width: 280px;
-      display: block;
-    }
-
-    #resultsContainer {
-      margin: 10px auto;
-      padding: 0 10px;
-    }
-
     @media (max-width: 768px) {
-      .site-nav li {
-        display: block;
-        margin: 10px 0;
-      }
-
-      .content {
-        padding: 15px 10px;
-      }
-
-      .winner-photo {
-        max-width: 90%;
-      }
-
-      figcaption {
-        max-width: 90%;
-      }
+      .content { padding: 15px 10px; }
+      .winner-photo { max-width: 90%; }
+      figcaption { max-width: 90%; }
     }
   </style>
 </head>
 <body>
-  <nav class="site-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="course-map.html">Course Map</a></li>
-      <li><a href="register.html">Register</a></li>
-      <li><a href="aid-station.html">Info</a></li>
-      <li><a href="results.html">Results</a></li>
-      <li><a href="message-board.html">Message Board</a></li>
-    </ul>
-  </nav>
+  <!-- Nav is injected from nav.html by assets/js/nav.js -->
 
   <div class="year-selector">
     <label for="yearSelect"><strong>Select a Year:</strong></label><br>
@@ -188,5 +153,7 @@
   </div>
 
   <script src="raceResults.js" defer></script>
+  <!-- Shared nav loader -->
+  <script defer src="assets/js/nav.js"></script>
 </body>
 </html>
