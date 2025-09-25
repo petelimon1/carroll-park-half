@@ -4,55 +4,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Message Board</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Shared nav styles -->
+  <link href="assets/css/nav.css" rel="stylesheet" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    * {
-      box-sizing: border-box;
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      background: transparent;
+      text-align: center;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f4f4f4;
-      text-align: center;
+    /* Page-specific background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: url("cph-background.png") no-repeat center center fixed;
+      background-size: cover;
     }
 
     .comment-container {
       max-width: 700px;
-      margin: 0 auto;
+      margin: 120px auto 40px; /* top margin so nav doesn't overlap */
       background: rgba(255, 255, 255, 0.8);
       border-radius: 6px;
       padding: 20px;
     }
 
-    h1 {
-      margin-top: 0;
-    }
+    h1 { margin-top: 0; }
 
     @media (max-width: 768px) {
-      .site-nav li {
-        display: block;
-        margin: 10px 0;
-      }
-
-      .comment-container {
-        padding: 15px;
-      }
+      .comment-container { padding: 15px; margin: 100px 10px 30px; }
     }
   </style>
 </head>
 <body>
-  <nav class="site-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="course-map.html">Course Map</a></li>
-      <li><a href="register.html">Register</a></li>
-      <li><a href="aid-station.html">Info</a></li>
-      <li><a href="results.html">Results</a></li>
-      <li><a href="message-board.html">Message Board</a></li>
-    </ul>
-  </nav>
+  <!-- Nav is injected from nav.html by assets/js/nav.js -->
 
   <div class="comment-container">
     <h1>Message Board</h1>
@@ -63,5 +60,9 @@
   <script>
     commentBox('5735492674912256-proj');
   </script>
+
+  <!-- Shared nav loader -->
+  <script defer src="assets/js/nav.js"></script>
 </body>
 </html>
+
