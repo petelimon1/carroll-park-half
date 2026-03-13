@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>2025 Race Photos – Carroll Park Half Marathon</title>
+
+  <!-- Shared nav styles -->
+  <link href="assets/css/nav.css" rel="stylesheet" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      font-family: 'Inter', sans-serif;
+      background: transparent;
+      color: #111;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background-image: url("cph-background.png");
+      background-repeat: repeat;
+      background-position: top left;
+      background-size: clamp(240px, 40vw, 520px) auto;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .page-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 110px 20px 60px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 0 0 6px;
+    }
+
+    .subtitle {
+      color: #555;
+      font-size: 1.05rem;
+      margin: 0 0 36px;
+    }
+
+    .gallery {
+      columns: 3 280px;
+      column-gap: 12px;
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+    }
+
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0,0,0,0.88);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 6px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2.4rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px 8px;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 150ms;
+    }
+
+    .lightbox-nav:hover { background: rgba(255,255,255,0.3); }
+    .lightbox-prev { left: 16px; }
+    .lightbox-next { right: 16px; }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.5rem; }
+      .gallery { columns: 2 140px; column-gap: 8px; }
+      .gallery-item { margin-bottom: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-content">
+    <h1>2025 Race Photos</h1>
+    <p class="subtitle">September 2025 — Carroll Park, Brooklyn</p>
+
+    <div class="gallery" id="gallery">
+      <div class="gallery-item" data-index="0"><img src="photos/2025/IMG_1891.jpg" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="1"><img src="photos/2025/IMG_1899.jpg" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="2"><img src="photos/2025/IMG_1902.jpg" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="3"><img src="photos/2025/IMG_1905.jpg" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="4"><img src="photos/2025/IMG_1907.jpg" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="5"><img src="photos/2025/IMG_1908.jpg" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="6"><img src="photos/2025/IMG_1915.jpg" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="7"><img src="photos/2025/IMG_1927.jpg" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="8"><img src="photos/2025/IMG_1929.jpg" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="9"><img src="photos/2025/IMG_1931.jpg" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="10"><img src="photos/2025/IMG_1934.jpg" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="11"><img src="photos/2025/IMG_1935.jpg" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="12"><img src="photos/2025/IMG_2225.jpg" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="13"><img src="photos/2025/AidStation.jpg" alt="Aid station" loading="lazy"></div>
+      <div class="gallery-item" data-index="14"><img src="photos/2025/Anna.jpg" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="15"><img src="photos/2025/Baby1.jpg" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="16"><img src="photos/2025/Baby2.jpg" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="17"><img src="photos/2025/Tom%20Morgan.jpg" alt="Tom Morgan" loading="lazy"></div>
+      <div class="gallery-item" data-index="18"><img src="photos/2025/Tom%20Morgan2.jpg" alt="Tom Morgan" loading="lazy"></div>
+      <div class="gallery-item" data-index="19"><img src="photos/2025/1a2f9f84-df8d-47ec-9d85-7ecaec11133d.JPG" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="20"><img src="photos/2025/215f6683-3fca-4649-bce1-1a4e73f67585.JPG" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="21"><img src="photos/2025/386da13a-ec33-40be-940c-5e2f4cdcf272.JPG" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="22"><img src="photos/2025/8c4a0b61-0baa-40fe-8c9c-3f07a22f071c.JPG" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="23"><img src="photos/2025/abff452b-1546-4e81-acb5-139e7dd29096.JPG" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="24"><img src="photos/2025/c06ac9be-daef-4dff-9992-f7d01d19b307.JPG" alt="Race photo" loading="lazy"></div>
+      <div class="gallery-item" data-index="25"><img src="photos/2025/deeff30f-9276-4cc1-8419-20fa1fbd6666.JPG" alt="Race photo" loading="lazy"></div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox-close" id="lbClose" aria-label="Close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+    <img id="lbImg" src="" alt="Enlarged photo">
+    <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next">&#8250;</button>
+  </div>
+
+  <script>
+    const items = Array.from(document.querySelectorAll('.gallery-item'));
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    let current = 0;
+
+    function show(index) {
+      current = (index + items.length) % items.length;
+      lbImg.src = items[current].querySelector('img').src;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function close() {
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    items.forEach(item => item.addEventListener('click', () => show(+item.dataset.index)));
+    document.getElementById('lbClose').addEventListener('click', close);
+    document.getElementById('lbPrev').addEventListener('click', () => show(current - 1));
+    document.getElementById('lbNext').addEventListener('click', () => show(current + 1));
+    lb.addEventListener('click', e => { if (e.target === lb) close(); });
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') show(current - 1);
+      if (e.key === 'ArrowRight') show(current + 1);
+    });
+  </script>
+
+  <!-- Shared nav loader -->
+  <script defer src="assets/js/nav.js"></script>
+</body>
+</html>

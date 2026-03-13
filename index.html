@@ -19,7 +19,7 @@
       padding: 0;
       height: 100%;
       font-family: 'Inter', sans-serif;
-      background: transparent; /* background handled by ::before */
+      background: transparent;
     }
 
     /* Fixed, full-viewport background image */
@@ -35,7 +35,7 @@
       pointer-events: none;
     }
 
-    /* Page content */
+    /* Hero section */
     .hero-wrapper {
       min-height: calc(100vh - 60px);
       display: flex;
@@ -63,10 +63,166 @@
     h1 { margin: 0 0 6px; font-size: 1.8rem; }
     p  { margin: 0;        font-size: 1.1rem; }
 
+    /* Scroll-down hint */
+    .scroll-hint {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: rgba(0,0,0,0.55);
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-hint svg { width: 22px; height: 22px; }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(6px); }
+    }
+
+    /* Info strip below hero */
+    .info-strip {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+      padding: 64px 20px 80px;
+    }
+
+    .info-card {
+      background: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 14px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+      padding: 28px 36px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .info-card h2 {
+      margin: 0 0 8px;
+      font-size: 1.5rem;
+      color: #1f2937;
+    }
+
+    .info-card p {
+      margin: 0 0 20px;
+      font-size: 1.05rem;
+      color: #374151;
+      line-height: 1.5;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #1f2937;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 180ms;
+    }
+
+    .btn:hover { background: #374151; }
+
+    /* Countdown */
+    .countdown-card {
+      background: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 14px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+      padding: 28px 36px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .countdown-card h2 {
+      margin: 0 0 20px;
+      font-size: 1.3rem;
+      color: #1f2937;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .countdown-grid {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .countdown-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 72px;
+    }
+
+    .countdown-num {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1;
+      color: #111;
+    }
+
+    .countdown-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #6b7280;
+      margin-top: 4px;
+    }
+
+    .countdown-sep {
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: #9ca3af;
+      align-self: flex-start;
+      padding-top: 4px;
+    }
+
+    /* Photos teaser */
+    .photos-card {
+      background: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 14px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+      padding: 28px 36px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .photos-card h2 {
+      margin: 0 0 8px;
+      font-size: 1.5rem;
+      color: #1f2937;
+    }
+
+    .photos-card p {
+      margin: 0 0 20px;
+      font-size: 1.05rem;
+      color: #374151;
+      line-height: 1.5;
+    }
+
     @media (max-width: 760px) {
       .hero-wrapper img { width: 78vw; max-width: 420px; }
       h1 { font-size: 1.4rem; }
       p  { font-size: 1rem; }
+      .info-card, .countdown-card, .photos-card { padding: 22px 18px; }
+      .countdown-num { font-size: 2.2rem; }
+      .countdown-unit { min-width: 56px; }
     }
   </style>
 </head>
@@ -79,10 +235,74 @@
       <h1>A half marathon around the perimeter of Carroll Park.</h1>
       <p>Fun, absurd, and historic.</p>
     </div>
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </div>
   </div>
+
+  <div class="info-strip">
+
+    <!-- Race date + CTA -->
+    <div class="info-card">
+      <h2>Next Race: Saturday, September 19, 2026</h2>
+      <p>5pm sharp &mdash; Start &amp; finish at the corner of President &amp; Smith, Carroll Park, Brooklyn.</p>
+      <a href="register.html" class="btn">Register Now</a>
+    </div>
+
+    <!-- Countdown -->
+    <div class="countdown-card">
+      <h2>Race Day Countdown</h2>
+      <div class="countdown-grid" id="countdown">
+        <div class="countdown-unit"><span class="countdown-num" id="cd-days">--</span><span class="countdown-label">Days</span></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-label">Hours</span></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit"><span class="countdown-num" id="cd-mins">--</span><span class="countdown-label">Mins</span></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit"><span class="countdown-num" id="cd-secs">--</span><span class="countdown-label">Secs</span></div>
+      </div>
+    </div>
+
+    <!-- Photos teaser -->
+    <div class="photos-card">
+      <h2>2025 Race Photos</h2>
+      <p>Check out photos from last year's race through the streets of Carroll Gardens.</p>
+      <a href="photos.html" class="btn">View Photos</a>
+    </div>
+
+  </div>
+
+  <script>
+    const raceDate = new Date('2026-09-19T17:00:00-04:00'); // 5pm EDT
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function tick() {
+      const diff = raceDate - Date.now();
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML = '<p style="font-size:1.2rem;font-weight:700;">Race day is here!</p>';
+        return;
+      }
+      const totalSecs = Math.floor(diff / 1000);
+      const days  = Math.floor(totalSecs / 86400);
+      const hours = Math.floor((totalSecs % 86400) / 3600);
+      const mins  = Math.floor((totalSecs % 3600) / 60);
+      const secs  = totalSecs % 60;
+
+      document.getElementById('cd-days').textContent  = days;
+      document.getElementById('cd-hours').textContent = pad(hours);
+      document.getElementById('cd-mins').textContent  = pad(mins);
+      document.getElementById('cd-secs').textContent  = pad(secs);
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  </script>
 
   <!-- Shared nav loader -->
   <script defer src="assets/js/nav.js"></script>
 </body>
 </html>
-
