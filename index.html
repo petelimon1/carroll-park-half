@@ -22,7 +22,6 @@
       background: transparent;
     }
 
-    /* Fixed, full-viewport background image */
     body::before {
       content: "";
       position: fixed;
@@ -35,7 +34,6 @@
       pointer-events: none;
     }
 
-    /* Overlay to tone down the busy pattern */
     body::after {
       content: "";
       position: fixed;
@@ -45,79 +43,75 @@
       pointer-events: none;
     }
 
-    /* Hero section */
-    .hero-wrapper {
-      min-height: calc(100vh - 60px);
+    /* ── Desktop: everything fits in one viewport ── */
+    .page {
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
-      padding: 16px 10px 40px;
+      padding: 80px 24px 24px; /* top pad clears sticky nav */
+      gap: 20px;
+    }
+
+    /* Hero */
+    .hero {
       text-align: center;
     }
 
-    .overlay {
-      background: rgba(255, 255, 255, 0.90);
-      padding: 28px 40px;
-      border-radius: 14px;
-      max-width: 90vw;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
     }
 
-    h1 { margin: 0 0 10px; font-size: 2.6rem; font-weight: 700; letter-spacing: -0.01em; }
-    .tagline { margin: 0; font-size: 1.2rem; color: #374151; }
-
-    /* Scroll-down hint */
-    .scroll-hint {
-      margin-top: 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      color: rgba(0,0,0,0.55);
-      font-size: 0.85rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      animation: bounce 2s infinite;
+    .hero .sub1 {
+      margin: 0 0 4px;
+      font-size: 1.15rem;
+      color: #374151;
     }
 
-    .scroll-hint svg { width: 22px; height: 22px; }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(6px); }
+    .hero .sub2 {
+      margin: 0;
+      font-size: 1rem;
+      color: #6b7280;
+      font-style: italic;
     }
 
-    /* Info strip below hero */
-    .info-strip {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 28px;
-      padding: 64px 20px 80px;
+    /* Cards row */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 960px;
+      margin: 0 auto;
+      width: 100%;
     }
 
-    .info-card {
-      background: rgba(255, 255, 255, 0.90);
+    .card {
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-radius: 14px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-      padding: 28px 36px;
-      max-width: 600px;
-      width: 100%;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+      padding: 22px 24px;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
     }
 
-    .info-card h2 {
-      margin: 0 0 8px;
-      font-size: 1.5rem;
+    .card h2 {
+      margin: 0;
+      font-size: 1.1rem;
       color: #1f2937;
     }
 
-    .info-card p {
-      margin: 0 0 20px;
-      font-size: 1.05rem;
+    .card p {
+      margin: 0;
+      font-size: 0.95rem;
       color: #374151;
       line-height: 1.5;
     }
@@ -127,40 +121,21 @@
       background: #1f2937;
       color: #fff;
       text-decoration: none;
-      padding: 12px 28px;
+      padding: 10px 24px;
       border-radius: 999px;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.9rem;
       transition: background 180ms;
+      margin-top: 2px;
     }
 
     .btn:hover { background: #374151; }
 
     /* Countdown */
-    .countdown-card {
-      background: rgba(255, 255, 255, 0.90);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-radius: 14px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-      padding: 28px 36px;
-      max-width: 600px;
-      width: 100%;
-      text-align: center;
-    }
-
-    .countdown-card h2 {
-      margin: 0 0 20px;
-      font-size: 1.3rem;
-      color: #1f2937;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
     .countdown-grid {
       display: flex;
       justify-content: center;
-      gap: 16px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
@@ -168,139 +143,108 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-width: 72px;
+      min-width: 52px;
     }
 
     .countdown-num {
-      font-size: 2.8rem;
+      font-size: 2rem;
       font-weight: 700;
       line-height: 1;
       color: #111;
     }
 
     .countdown-label {
-      font-size: 0.72rem;
+      font-size: 0.65rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: #6b7280;
-      margin-top: 4px;
+      margin-top: 3px;
     }
 
     .countdown-sep {
-      font-size: 2.4rem;
+      font-size: 1.8rem;
       font-weight: 300;
       color: #9ca3af;
       align-self: flex-start;
-      padding-top: 4px;
+      padding-top: 3px;
     }
 
-    /* Photos teaser */
-    .photos-card {
-      background: rgba(255, 255, 255, 0.90);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-radius: 14px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-      padding: 28px 36px;
-      max-width: 600px;
-      width: 100%;
-      text-align: center;
-    }
-
-    .photos-card h2 {
-      margin: 0 0 8px;
-      font-size: 1.5rem;
-      color: #1f2937;
-    }
-
-    .photos-card p {
-      margin: 0 0 20px;
-      font-size: 1.05rem;
-      color: #374151;
-      line-height: 1.5;
-    }
-
+    /* ── Mobile: single column, allow scrolling ── */
     @media (max-width: 760px) {
-      h1 { font-size: 1.8rem; }
-      .tagline { font-size: 1rem; }
-      .overlay { padding: 22px 22px; }
-      .info-card, .countdown-card, .photos-card { padding: 22px 18px; }
-      .countdown-num { font-size: 2.2rem; }
-      .countdown-unit { min-width: 56px; }
+      .page {
+        justify-content: flex-start;
+        padding: 100px 16px 40px;
+        gap: 16px;
+      }
+
+      .hero h1    { font-size: 2rem; }
+      .hero .sub1 { font-size: 1rem; }
+      .hero .sub2 { font-size: 0.9rem; }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .countdown-num { font-size: 1.8rem; }
     }
   </style>
 </head>
 <body>
   <!-- Nav is injected from nav.html by assets/js/nav.js -->
 
-  <div class="hero-wrapper">
-    <div class="overlay">
+  <div class="page">
+
+    <div class="hero">
       <h1>Carroll Park Half Marathon</h1>
-      <p class="tagline">A half marathon around the perimeter of Carroll Park. Fun, absurd, and historic.</p>
-    </div>
-    <div class="scroll-hint" aria-hidden="true">
-      <span>Scroll</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="6 9 12 15 18 9"/>
-      </svg>
-    </div>
-  </div>
-
-  <div class="info-strip">
-
-    <!-- Race date + CTA -->
-    <div class="info-card">
-      <h2>Next Race: Saturday, September 19, 2026</h2>
-      <p>5pm sharp &mdash; Start &amp; finish at the corner of President &amp; Smith, Carroll Park, Brooklyn.</p>
-      <a href="register.html" class="btn">Register Now</a>
+      <p class="sub1">53 laps around the perimeter of Carroll Park, Brooklyn.</p>
+      <p class="sub2">Fun, absurd, historic.</p>
     </div>
 
-    <!-- Countdown -->
-    <div class="countdown-card">
-      <h2>Race Day Countdown</h2>
-      <div class="countdown-grid" id="countdown">
-        <div class="countdown-unit"><span class="countdown-num" id="cd-days">--</span><span class="countdown-label">Days</span></div>
-        <div class="countdown-sep">:</div>
-        <div class="countdown-unit"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-label">Hours</span></div>
-        <div class="countdown-sep">:</div>
-        <div class="countdown-unit"><span class="countdown-num" id="cd-mins">--</span><span class="countdown-label">Mins</span></div>
-        <div class="countdown-sep">:</div>
-        <div class="countdown-unit"><span class="countdown-num" id="cd-secs">--</span><span class="countdown-label">Secs</span></div>
+    <div class="cards">
+
+      <div class="card">
+        <h2>Next Race</h2>
+        <p>Saturday, September 19, 2026<br>5pm sharp — President &amp; Smith</p>
+        <a href="register.html" class="btn">Register Now</a>
       </div>
-    </div>
 
-    <!-- Photos teaser -->
-    <div class="photos-card">
-      <h2>2025 Race Photos</h2>
-      <p>Check out photos from last year's race through the streets of Carroll Gardens.</p>
-      <a href="photos.html" class="btn">View Photos</a>
-    </div>
+      <div class="card">
+        <h2>Race Day Countdown</h2>
+        <div class="countdown-grid" id="countdown">
+          <div class="countdown-unit"><span class="countdown-num" id="cd-days">--</span><span class="countdown-label">Days</span></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-label">Hours</span></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit"><span class="countdown-num" id="cd-mins">--</span><span class="countdown-label">Mins</span></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit"><span class="countdown-num" id="cd-secs">--</span><span class="countdown-label">Secs</span></div>
+        </div>
+      </div>
 
+      <div class="card">
+        <h2>2025 Race Photos</h2>
+        <p>Photos from last year's race through the streets of Carroll Gardens.</p>
+        <a href="photos.html" class="btn">View Photos</a>
+      </div>
+
+    </div>
   </div>
 
   <script>
-    const raceDate = new Date('2026-09-19T17:00:00-04:00'); // 5pm EDT
-
+    const raceDate = new Date('2026-09-19T17:00:00-04:00');
     function pad(n) { return String(n).padStart(2, '0'); }
-
     function tick() {
       const diff = raceDate - Date.now();
       if (diff <= 0) {
-        document.getElementById('countdown').innerHTML = '<p style="font-size:1.2rem;font-weight:700;">Race day is here!</p>';
+        document.getElementById('countdown').innerHTML = '<p style="font-size:1rem;font-weight:700;">Race day is here!</p>';
         return;
       }
-      const totalSecs = Math.floor(diff / 1000);
-      const days  = Math.floor(totalSecs / 86400);
-      const hours = Math.floor((totalSecs % 86400) / 3600);
-      const mins  = Math.floor((totalSecs % 3600) / 60);
-      const secs  = totalSecs % 60;
-
-      document.getElementById('cd-days').textContent  = days;
-      document.getElementById('cd-hours').textContent = pad(hours);
-      document.getElementById('cd-mins').textContent  = pad(mins);
-      document.getElementById('cd-secs').textContent  = pad(secs);
+      const s = Math.floor(diff / 1000);
+      document.getElementById('cd-days').textContent  = Math.floor(s / 86400);
+      document.getElementById('cd-hours').textContent = pad(Math.floor((s % 86400) / 3600));
+      document.getElementById('cd-mins').textContent  = pad(Math.floor((s % 3600) / 60));
+      document.getElementById('cd-secs').textContent  = pad(s % 60);
     }
-
     tick();
     setInterval(tick, 1000);
   </script>
