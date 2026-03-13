@@ -136,6 +136,75 @@
     .prev { left: 10px; } .next { right: 10px; }
     .carousel.hidden { display: none; }
 
+    /* Winner interview section */
+    .interview-section {
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(0,0,0,0.10);
+      text-align: left;
+    }
+
+    .interview-section h3 {
+      text-align: center;
+      font-size: 1.3rem;
+      margin: 0 0 16px;
+    }
+
+    .interview-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .interview-photos img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+
+    .interview-intro {
+      font-size: 0.97rem;
+      line-height: 1.7;
+      color: #374151;
+      margin: 0 0 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+    }
+
+    .qa-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .question {
+      font-weight: 600;
+      font-size: 0.97rem;
+      color: #111;
+      margin: 0 0 6px;
+      line-height: 1.4;
+    }
+
+    .question::before {
+      content: "Q: ";
+      color: #9ca3af;
+    }
+
+    .answer {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #374151;
+      margin: 0;
+      padding-left: 16px;
+      border-left: 3px solid #e5e7eb;
+    }
+
+    @media (max-width: 500px) {
+      .interview-photos { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 360px) { :root { --bg-tile: 220px; } }
   </style>
 </head>
@@ -167,6 +236,41 @@
       <li><a href="https://www.strava.com/activities/15882586026/overview" target="_blank" rel="noopener noreferrer">Annie Muire</a></li>
       <li>Anna Katrina Lockwood</li>
     </ul>
+
+    <!-- 2025 Winner Interview -->
+    <div class="interview-section">
+      <h3>2025 Winner Interview — Tom Germano</h3>
+
+      <div class="interview-photos">
+        <img src="photos/2025/c06ac9be-daef-4dff-9992-f7d01d19b307.JPG" alt="Tom Germano breaking the finish line tape">
+        <img src="photos/2025/215f6683-3fca-4649-bce1-1a4e73f67585.JPG" alt="Tom Germano drinking the boot of beer">
+      </div>
+
+      <p class="interview-intro">Tom ran a fast 2025 race with a smile on his face and a spring in his step every time he passed the aid station and cheering crowd. We asked him about his experience and if he has any hot tips for 2026 runners...</p>
+
+      <div class="qa-list">
+        <div>
+          <p class="question">What was your favorite section of the course?</p>
+          <p class="answer">Definitely the cheering section and water table! You coast a gentle downhill and are then greeted with smiling faces and high-fives.</p>
+        </div>
+        <div>
+          <p class="question">How did you train for so many left turns?</p>
+          <p class="answer">It was tough. I was already a little lopsided from so many laps around Prospect Park, but Carroll Park is a different beast. There really is no substitute for practicing on the race course, so I would sneak in loops when I could.</p>
+        </div>
+        <div>
+          <p class="question">What are your tips for 2026 runners hoping for a podium finish?</p>
+          <p class="answer">You must adapt! Every loop must be different if you want to optimize for speed and efficiency. Parked cars will move to open up new gaps, the stroller crowd will head home which opens up the sidewalks, the flower guy leaves which allows faster cornering, a gaggle of teens crowd the sidewalk so take the road. The terrain is dynamic so you must remain alert!</p>
+        </div>
+        <div>
+          <p class="question">What are your top 3 Brooklyn parks to run dozens of loops around?</p>
+          <p class="answer">While Carroll Park holds a special place in my heart, you can also find me "loop"ing at Cobble Hill Park, Brooklyn Bridge Park Pier 5, and the Red Hook Track if it ever opens again.</p>
+        </div>
+        <div>
+          <p class="question">Did you finish that whole boot of beer?</p>
+          <p class="answer">Yes I did. It's a Carroll Park Half tradition.</p>
+        </div>
+      </div>
+    </div>
 
     <!-- Photo carousel (add <img> slides later) -->
     <section class="carousel" id="carousel" aria-label="Race photos">
