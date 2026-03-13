@@ -27,11 +27,21 @@
       content: "";
       position: fixed;
       inset: 0;
-      z-index: -1;
+      z-index: -2;
       background-image: url("cph-background.png");
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
+      pointer-events: none;
+    }
+
+    /* Overlay to tone down the busy pattern */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: rgba(255, 255, 255, 0.50);
       pointer-events: none;
     }
 
@@ -46,22 +56,16 @@
       text-align: center;
     }
 
-    .hero-wrapper img {
-      max-width: 100%;
-      width: 520px;
-      height: auto;
-      margin-bottom: 12px;
-    }
-
     .overlay {
-      background: rgba(255, 255, 255, 0.85);
-      padding: 12px 20px;
-      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.90);
+      padding: 28px 40px;
+      border-radius: 14px;
       max-width: 90vw;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
     }
 
-    h1 { margin: 0 0 6px; font-size: 1.8rem; }
-    p  { margin: 0;        font-size: 1.1rem; }
+    h1 { margin: 0 0 10px; font-size: 2.6rem; font-weight: 700; letter-spacing: -0.01em; }
+    .tagline { margin: 0; font-size: 1.2rem; color: #374151; }
 
     /* Scroll-down hint */
     .scroll-hint {
@@ -217,9 +221,9 @@
     }
 
     @media (max-width: 760px) {
-      .hero-wrapper img { width: 78vw; max-width: 420px; }
-      h1 { font-size: 1.4rem; }
-      p  { font-size: 1rem; }
+      h1 { font-size: 1.8rem; }
+      .tagline { font-size: 1rem; }
+      .overlay { padding: 22px 22px; }
       .info-card, .countdown-card, .photos-card { padding: 22px 18px; }
       .countdown-num { font-size: 2.2rem; }
       .countdown-unit { min-width: 56px; }
@@ -230,10 +234,9 @@
   <!-- Nav is injected from nav.html by assets/js/nav.js -->
 
   <div class="hero-wrapper">
-    <img src="CarrollParkHalfMarathonLOGO.png" alt="Carroll Park Half Marathon Logo" />
     <div class="overlay">
-      <h1>A half marathon around the perimeter of Carroll Park.</h1>
-      <p>Fun, absurd, and historic.</p>
+      <h1>Carroll Park Half Marathon</h1>
+      <p class="tagline">A half marathon around the perimeter of Carroll Park. Fun, absurd, and historic.</p>
     </div>
     <div class="scroll-hint" aria-hidden="true">
       <span>Scroll</span>
