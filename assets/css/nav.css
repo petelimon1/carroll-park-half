@@ -17,7 +17,6 @@
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 8px;
   padding: 10px 14px;
   background: var(--nav-bg);
   border: 1px solid var(--nav-border);
@@ -27,8 +26,8 @@
   box-shadow:
     0 2px 8px rgba(0,0,0,0.08),
     0 12px 30px rgba(0,0,0,0.10);
-  max-width: min(100%, 920px);
-  width: auto;
+  max-width: min(100%, 980px);
+  width: 100%;
 }
 
 .brand {
@@ -37,15 +36,21 @@
   letter-spacing: 0.02em;
   color: #1f2937;
   white-space: nowrap;
+  text-decoration: none;
+  flex-shrink: 0;
 }
+
+.brand:hover { opacity: 0.75; }
 
 .nav-list {
   list-style: none;
   display: flex;
-  gap: 6px;
+  gap: 4px;
   margin: 0;
   padding: 0;
   flex-wrap: nowrap;
+  flex: 1;
+  justify-content: center;
 }
 
 .nav-list a {
