@@ -124,6 +124,40 @@
       border-left: 3px solid #e5e7eb;
     }
 
+    .photo-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 0 0 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .photo-pair img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+
+    .inline-photo {
+      margin-top: 12px;
+      padding-left: 20px;
+    }
+
+    .inline-photo img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 8px;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+
+    @media (max-width: 600px) {
+      .photo-pair { grid-template-columns: 1fr; }
+      .inline-photo img { max-width: 100%; }
+    }
+
     @media (max-width: 600px) {
       h1 { font-size: 1.4rem; }
       .page-header { padding: 14px 20px; }
@@ -140,6 +174,11 @@
     </div>
 
     <div class="article-card">
+      <div class="photo-pair">
+        <img src="photos/2025/c06ac9be-daef-4dff-9992-f7d01d19b307.JPG" alt="Tom Germano breaking the finish line tape">
+        <img src="photos/2025/215f6683-3fca-4649-bce1-1a4e73f67585.JPG" alt="Tom Germano drinking the boot of beer">
+      </div>
+
       <p class="intro">Tom ran a fast 2025 race with a smile on his face and a spring in his step every time he passed the aid station and cheering crowd. We asked him about his experience and if he has any hot tips for 2026 runners...</p>
 
       <div class="qa-list">
