@@ -148,42 +148,27 @@
 
     .btn:hover { background: #374151; }
 
-    /* Countdown */
-    .countdown-grid {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 8px;
-      flex-wrap: nowrap;
+    /* Postponed notice */
+    .notice-banner {
+      max-width: 740px;
+      margin: 0 auto;
+      width: 100%;
+      background: rgba(153, 27, 27, 0.95);
+      color: #fff;
+      border-radius: 12px;
+      padding: 14px 22px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     }
 
-    .countdown-unit {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: 46px;
+    .notice-banner strong {
+      font-size: 1.05rem;
     }
 
-    .countdown-num {
-      font-size: 1.8rem;
-      font-weight: 700;
-      line-height: 1;
-      color: #111;
-    }
-
-    .countdown-label {
-      font-size: 0.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #6b7280;
-      margin-top: 3px;
-    }
-
-    .countdown-sep {
-      font-size: 1.6rem;
-      font-weight: 300;
-      color: #9ca3af;
-      padding-top: 2px;
+    .notice-banner p {
+      margin: 4px 0 0;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.9);
     }
 
     /* ── Mobile: single column ── */
@@ -200,7 +185,6 @@
       .hero .sub2 { font-size: 0.85rem; }
 
       .cards { grid-template-columns: 1fr; }
-      .countdown-num { font-size: 1.6rem; }
     }
   </style>
 </head>
@@ -216,25 +200,16 @@
       </div>
     </div>
 
+    <div class="notice-banner">
+      <strong>The race has been postponed.</strong>
+      <p>A new date will be announced soon. Thanks for your patience &mdash; check back here for updates.</p>
+    </div>
+
     <div class="cards">
 
       <div class="card">
         <h2>Next Race</h2>
-        <p>Saturday, September 19, 2026<br>5pm sharp &mdash; President &amp; Smith</p>
-        <a href="register.html" class="btn">Register Now</a>
-      </div>
-
-      <div class="card">
-        <h2>Race Day Countdown</h2>
-        <div class="countdown-grid" id="countdown">
-          <div class="countdown-unit"><span class="countdown-num" id="cd-days">--</span><span class="countdown-label">Days</span></div>
-          <div class="countdown-sep">:</div>
-          <div class="countdown-unit"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-label">Hours</span></div>
-          <div class="countdown-sep">:</div>
-          <div class="countdown-unit"><span class="countdown-num" id="cd-mins">--</span><span class="countdown-label">Mins</span></div>
-          <div class="countdown-sep">:</div>
-          <div class="countdown-unit"><span class="countdown-num" id="cd-secs">--</span><span class="countdown-label">Secs</span></div>
-        </div>
+        <p>Postponed &mdash; new date TBD</p>
       </div>
 
       <div class="card">
@@ -251,25 +226,6 @@
 
     </div>
   </div>
-
-  <script>
-    const raceDate = new Date('2026-09-19T17:00:00-04:00');
-    function pad(n) { return String(n).padStart(2, '0'); }
-    function tick() {
-      const diff = raceDate - Date.now();
-      if (diff <= 0) {
-        document.getElementById('countdown').innerHTML = '<p style="font-size:1rem;font-weight:700;">Race day is here!</p>';
-        return;
-      }
-      const s = Math.floor(diff / 1000);
-      document.getElementById('cd-days').textContent  = Math.floor(s / 86400);
-      document.getElementById('cd-hours').textContent = pad(Math.floor((s % 86400) / 3600));
-      document.getElementById('cd-mins').textContent  = pad(Math.floor((s % 3600) / 60));
-      document.getElementById('cd-secs').textContent  = pad(s % 60);
-    }
-    tick();
-    setInterval(tick, 1000);
-  </script>
 
   <!-- Shared nav loader -->
   <script defer src="assets/js/nav.js"></script>
